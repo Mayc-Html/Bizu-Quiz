@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    
+}
+body{
+     background-image: url("OIP (5).webp");
+    
+}
+h1{
+    color: darkblue;
+    font-family: 'Cherry Cream Soda', cursive;
+}
+.selecao{
+    
+    text-align: center;
+    margin-top: 50px;
+}
