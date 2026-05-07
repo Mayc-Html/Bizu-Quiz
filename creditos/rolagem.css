@@ -1,0 +1,54 @@
+body{
+margin: 0;
+background: black;
+color: white;
+overflow: hidden;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.rolagem{
+position: absolute;
+width: 100%;
+text-align: center;
+animation: subir 15s linear infinite forwards;
+}
+
+@keyframes subir{
+  from{
+    transform: translateY(0%);
+  }
+  to{
+    transform: translateY(-50%);
+  }
+}
+
+.apresentacao{
+  margin-top: 200px;
+  font-size: 50px;
+}
+
+h1{
+  margin-bottom: 60px;
+  font-size: 50px;
+}
+
+p{
+  margin: 40px 0;
+  font-size: 30px;
+}
+
+.final{
+  margin-top: 100px;
+}
+
+.dialogo{
+  margin-top: 200px;
+  padding: 30px;
+  font-size: 30px;
+}
+
+.video{
+  height: 70vh;
+  width: 100%;
+  object-fit: cover;
+}
