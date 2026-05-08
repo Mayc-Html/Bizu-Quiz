@@ -1,4 +1,51 @@
 body{
-    background-image: url(3689d15f-c5a5-4c92-a630-dc07d13f4433.jpg);
-    margin-top: 20px;
+background-image: url(3689d15f-c5a5-4c92-a630-dc07d13f4433.jpg);
+background-size: 90%; 
+background-position: center;
+background-repeat: no-repeat;
+font-family: 'Cherry Cream Soda', cursive;
+ min-height: 100vh;
 }
+
+.botoes{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+}
+.botao{
+  padding: 15px 30px;
+  background-color: #b3834f;
+    border: 5px solid #6b4a2f;
+    
+
+  color: white;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 30px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+  width: 500px;
+  height: 90px;
+}
+
+.botao:hover{
+  transform: scale(1.05);
+}
+.created-by {
+    
+    margin-right: 20px;
+    font-size: 10px;
+    text-shadow: 4px 4px 10px black;
+}
+    
+
