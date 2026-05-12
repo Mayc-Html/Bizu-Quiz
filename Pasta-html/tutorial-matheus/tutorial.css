@@ -1,0 +1,19 @@
+body{
+    background-image: url(WhatsApp\ Image\ 2026-05-12\ at\ 08.54.09.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.botao-genio {
+    padding: 15px 40px;      /* Dá espaço para a palavra respirar */
+    font-size: 20px;         /* Deixa a palavra grande */
+    font-weight: bold;       /* Deixa a letra grossa */
+    text-align: center;      /* Garante que a palavra fique no meio */
+    background-color: #b3834f;
+    cursor: pointer;
+    border: 5px solid #6b4a2f;
+    color: white;
+    
+}
+
