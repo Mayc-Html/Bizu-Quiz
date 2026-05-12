@@ -17,9 +17,7 @@ VERSÃO BRASILEIRA: HERBERT RICHERS.
        </div>
        
    <div class="dialogo">
-       <p> (dialogo)
-    </p>
-    
+       
     <p> — Tô esperando Vitu mandar
     </p>
     
@@ -29,7 +27,8 @@ VERSÃO BRASILEIRA: HERBERT RICHERS.
     <p> — Tá nas mãos de Vitu, ele não vai nos decepcionar
     </p>
     
-    <p> — Culpa de Vitu, numa moleza que só Deus. Tá deixando a Deus dará 
+    <p> — Culpa de Vitu, numa moleza que só Deus.
+      Quer deixar de última hora esse preguiçoso
     </p>
     
     <p> — Se eu soubesse que era pra ano quem vem tinha nem começado 
@@ -38,30 +37,70 @@ VERSÃO BRASILEIRA: HERBERT RICHERS.
     <p> — É complicado...
     </p>
     
-    <p> — Vai te que tirar do grupo
+    <p> — Tem que tirar do grupo
     </p>
    </div>
 
 <div>
            <h1>Creaty by:</h1>
    
-   <p>Lider</p>
-   <p>Padrão</p>
-   <p>Monstro</p>
-   <p>Bizurado</p>
-   <p>bisonho</p>
-   <p>Dívida</p>
+   <p>Lider (Leonardo)</p>
+   <p>Padrão (Maycol)</p>
+   <p>Monstro (Mateus)</p>
+   <p>Bizurado (Adenilzo)</p>
+   <p>Bisonho (Victor)</p>
+   <p>Dívida (Bruno)</p>
     </div>
 
      <p class="final">
        (AGRADECIMENTOS)
-     é com Vitu também</p>
+
+Queremos agradecer primeiramente a nossos professores Kaimmy e Juan pela oportunidade que nos foi dada, e também por cada ajuda. 
+Somos extremamente gratos também ao nosso antigo professor Matheus Lima, que serviu de inspiração e ajuda em diversos aspectos, que dizem respeito não só ao site, mas também à nossa vida.
+
+     </p>
      
      <video class="video"
-     src="VID-20260504-WA0057.mp4" autoplay muted loop></video>
-  
-      
+       id="meuVideo"
+       src="credvideo.mp4"
+       muted
+       loop>
+      </video>
+
      </div>
  </div>
+<script>
+  // Configuração da rolagem
+  const velocidade = 1; // pixels por movimento
+  const intervalo = 10; // tempo em ms
+
+  // Seleciona o vídeo
+  const video = document.getElementById("meuVideo");
+
+  // Inicia a rolagem automática
+  const autoScroll = setInterval(() => {
+
+    window.scrollBy(0, velocidade);
+
+    // Altura total da página
+    const alturaPagina = document.documentElement.scrollHeight;
+
+    // Posição atual + altura visível
+    const posicaoAtual = window.innerHeight + window.pageYOffset;
+
+    // Verifica se chegou ao final
+    if (posicaoAtual >= alturaPagina) {
+
+      clearInterval(autoScroll);
+
+      console.log("Rolagem finalizada!");
+
+      // Inicia o vídeo
+      video.play();
+    }
+
+  }, intervalo);
+</script>
+ 
 </body>
 </html>

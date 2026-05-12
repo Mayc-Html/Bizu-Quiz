@@ -13,14 +13,8 @@ text-align: center;
 animation: subir 15s linear infinite forwards;
 }
 
-@keyframes subir{
-  from{
-    transform: translateY(0%);
-  }
-  to{
-    transform: translateY(-50%);
-  }
-}
+
+
 
 .apresentacao{
   margin-top: 200px;
@@ -48,7 +42,6 @@ p{
 }
 
 .video{
-  height: 70vh;
-  width: 100%;
+
   object-fit: cover;
 }
