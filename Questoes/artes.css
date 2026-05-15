@@ -1,0 +1,32 @@
+.numero {
+    background: rgb(172, 152, 190);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    line-height: 100px;
+    font-size: 100px;
+    margin: manual;
+    text-shadow: none;
+    left: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: center
+    
+}
+.comeco { margin-top: 45px;
+    font-size: large;
+
+}body {
+    font-family: 'Cherry Cream Soda', cursive;
+    text-align: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url(../HTMLgameplay-vitu/Imagens-vitu/OIP\ \(5\).webp);
+    background-size: 700px;
+    background-position: center;
+    background-repeat: no-repeat ;background-size: cover;
+
+}
+.pergunta{
+    font-size: 70px;
+}
