@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+ background-image: url(../HTMLgameplay-vitu/Imagens-vitu/OIP\ \(5\).webp);
+    background-size: 700px;
+
+    background-position: center;
+    background-repeat: no-repeat ;
+    background-size: cover;
+}
+
+.pagina{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.numerador{
+  width: 80px;
+  height: 80px;
+  
+  border-radius: 50%;
+  background: #4e23a4 ;
+
+   margin-left: 25px;
+   margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+   font-size: 65px;
+  text-align: center;
+  color: #ffecec;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.pergunta{
+  font-size: 55px;
+  text-align: center;
+  color: #2E2A66;
+  margin-top: 50px;
+}
+
+.botoes{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px ;
+
+  justify-content: center;
+  margin-top: 50px;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  font-size: 30px;
+  color: black;
+  
+  cursor: pointer;
+  border: 7px solid darkgrey;
+    background-color: chocolate;
+ border-radius:  8px;
+ 
+    width: 300px;
+    height: 100px;
+   
+}
+
+button:hover{
+  background-color: #82fd7c ;
+    color:rgb(250, 250, 250); ;
+}
+
+button:active{
+  transform: translateY(8px);
+ background-color: #533a85 ;
+    color:rgb(250, 250, 250); ;
+}
+
+.credito{
+  position: end;
+  font-size: 20px;
+  color: #2E2A66;
+  margin-top: 100px;
+}
