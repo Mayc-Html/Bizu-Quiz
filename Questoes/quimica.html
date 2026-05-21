@@ -3,9 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="quimica.css">
     <title>Questões de Química</title>
 </head>
 <body>
-    
+
+    <div class="começo">
+
+    <div class="numero">1.</div>
+
+  <h1 class="pergunta">Qual dos processos abaixo é um exemplo de fenômeno exclusivamente físico?</h1>
+
+ </div>
+
+  <div class="botao-geral">
+
+    <ul>
+        <li>
+        <button class="botao">Ferrugem formando-se em um prego de ferro.</button>
+        <button class="botao">Academia em um dia ensolarado</button>
+        </li>
+
+        <li>
+        <button class="botao">Açúcar caramelizado ao ser aquecido</button>
+        <button class="botao">Água evaporando de uma poça</button>
+        </li>
+
+    </ul>
+
+ </div>
+ <script>
+
+const perguntas = [
+{
+    pergunta: "Qual dos processos abaixo é um exemplo de fenômeno exclusivamente físico?",
+    respostas: ["Açúcar caramelizado ao ser aquecido", "Academia em um dia ensolarado", "Água evaporando de uma poça", "Ferrugem formando-se em um prego de ferro"],
+    correta: 1
+},
+{
+    pergunta: "Quanto é 5 + 3?",
+    respostas: ["6", "7", "8", "9"],
+    correta: 2
+},
+{
+    pergunta: "Qual planeta é conhecido como planeta vermelho?",
+    respostas: ["Terra", "Júpiter", "Marte", "Vênus"],
+    correta: 2
+},
+{
+    pergunta: "Quem descobriu o Brasil?",
+    respostas: ["Pedro Álvares Cabral", "Dom Pedro I", "Tiradentes", "Getúlio Vargas"],
+    correta: 0
+},
+{
+    pergunta: "Qual linguagem roda no navegador?",
+    respostas: ["Python", "C++", "Java", "JavaScript"],
+    correta: 3
+},
+{
+    pergunta: "Quanto é 10 x 2?",
+    respostas: ["20", "10", "15", "25"],
+    correta: 0
+},
+{
+    pergunta: "Qual é o maior oceano?",
+    respostas: ["Atlântico", "Pacífico", "Índico", "Ártico"],
+    correta: 1
+},
+{
+    pergunta: "Qual animal mia?",
+    respostas: ["Cachorro", "Gato", "Pássaro", "Peixe"],
+    correta: 1
+},
+{
+    pergunta: "Qual cor resulta de azul + amarelo?",
+    respostas: ["Verde", "Roxo", "Laranja", "Branco"],
+    correta: 0
+},
+{
+    pergunta: "Qual é o HTML usado para links?",
+    respostas: ["<p>", "<a>", "<div>", "<img>"],
+    correta: 1
+}
+];
+
+let perguntaAtual = 0;
+let pontos = 0;
+
+function mostrarPergunta(){
+
+    const pergunta = document.getElementById("pergunta");
+    const respostas = document.getElementById("respostas");
+
+    pergunta.innerText = perguntas[perguntaAtual].pergunta;
+
+    respostas.innerHTML = "";
+
+    perguntas[perguntaAtual].respostas.forEach((resposta, index) => {
+
+        const botao = document.createElement("button");
+
+        botao.innerText = resposta;
+
+        botao.onclick = () => verificarResposta(index);
+
+        respostas.appendChild(botao);
+    });
+}
+
+function verificarResposta(index){
+
+    if(index === perguntas[perguntaAtual].correta){
+        pontos++;
+    }
+
+    perguntaAtual++;
+
+    if(perguntaAtual < perguntas.length){
+        mostrarPergunta();
+    }else{
+        mostrarResultado();
+    }
+}
+
+function mostrarResultado(){
+
+    document.querySelector(".quiz").innerHTML = `
+        <h2>Quiz Finalizado!</h2>
+        <p>Você acertou ${pontos} de ${perguntas.length} perguntas.</p>
+
+        <button onclick="location.reload()">
+            Reiniciar
+        </button>
+    `;
+}
+
+mostrarPergunta();
+
+</script>
+
 </body>
 </html>
