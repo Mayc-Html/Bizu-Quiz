@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+
+  <style>
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f0f0f0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 100vh;
+    }
+
+    .quiz{
+      background-color: white;
+      padding: 30px;
+      border-radius: 20px;
+      width: 500px;
+
+      text-align: center;
+    }
+
+    h1{
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .botoes{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    button{
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+
+      font-size: 18px;
+      cursor: pointer;
+
+      background-color: #4a90e2;
+      color: white;
+
+      transition: 0.3s;
+    }
+
+    button:hover{
+      transform: scale(1.03);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="quiz">
+
+    <h1 id="pergunta"></h1>
+
+    <div class="botoes">
+
+      <button onclick="responder(0)" id="bt1"></button>
+
+      <button onclick="responder(1)" id="bt2"></button>
+
+      <button onclick="responder(2)" id="bt3"></button>
+
+      <button onclick="responder(3)" id="bt4"></button>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    const perguntas = [
+
+      {
+        pergunta: "Qual a capital do Brasil?",
+
+        respostas: [
+          "Rio de Janeiro",
+          "Brasília",
+          "São Paulo",
+          "Salvador"
+        ],
+
+        correta: 1
+      },
+
+      {
+        pergunta: "Quanto é 5 + 5?",
+
+        respostas: [
+          "8",
+          "10",
+          "12",
+          "15"
+        ],
+
+        correta: 1
+      },
+
+      {
+        pergunta: "Qual linguagem usamos para estilizar sites?",
+
+        respostas: [
+          "Python",
+          "Java",
+          "CSS",
+          "C++"
+        ],
+
+        correta: 2
+      }
+
+    ];
+
+    let perguntaAtual = 0;
+
+    function carregarPergunta(){
+
+      document.getElementById("pergunta").innerText =
+      perguntas[perguntaAtual].pergunta;
+
+      document.getElementById("bt1").innerText =
+      perguntas[perguntaAtual].respostas[0];
+
+      document.getElementById("bt2").innerText =
+      perguntas[perguntaAtual].respostas[1];
+
+      document.getElementById("bt3").innerText =
+      perguntas[perguntaAtual].respostas[2];
+
+      document.getElementById("bt4").innerText =
+      perguntas[perguntaAtual].respostas[3];
+    }
+
+    function responder(opcao){
+
+      if(opcao === perguntas[perguntaAtual].correta){
+
+        perguntaAtual++;
+
+        if(perguntaAtual < perguntas.length){
+
+          carregarPergunta();
+
+        } else{
+
+          document.querySelector(".quiz").innerHTML = `
+            <h1>🎉 Você venceu!</h1>
+          `;
+        }
+
+      } else{
+
+        document.querySelector(".quiz").innerHTML = `
+          <h1>💀 Você perdeu!</h1>
+        `;
+      }
+
+    }
+
+    carregarPergunta();
+
+  </script>
+
+</body>
+</html>

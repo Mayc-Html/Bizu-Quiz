@@ -1,27 +1,102 @@
-<html>
-  <head>
-    <meta charset="utf-8"/>
-    <title>Quiz de </title>
-    <link rel="stylesheet" href="portugues.css">
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="pagina">
-  <h1 class="numerador">01</h1>
-    
-  <p class="pergunta"><var>O sujeito foi preso porque roubou um dicionário; onde está o sujeito?</var></p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portugues</title>
+  <link rel="stylesheet" href="portugues.css">
+</head>
 
-<div class="botoes">
-  <button >No dicionário</button>
-  <button >Na cadeia</button>
-  <button>Oculto</button>
-  <button>É um sujeito simples</button>
-</div>
+<body>
+  <div class="começo">
+    <div class="numero">1.</div>
+    <h1 class=" pergunta" id="pergunta1">Na frase 'O sujeito foi preso porque roubou um dicionario', onde está o sujeito? </h1>
+  </div>
+  <div class="botao-geral">
+    <ul>
+      <li>
+      <li>
+        <button class="botao" onclick="responder(0)" id="bt1">No dicionário</button>
+        <button class="botao" onclick="responder(1)" id="bt2">Na cadeia</button>
+      </li>
+      <li>
 
-<div>
-  <p class="credito">@CREATED BY ALGUÉM</p>
-</div>
+        <button class="botao" onclick="responder(2)" id="bt3">Oculto</button>
+        <button class="botao" onclick="responder(3)" id="bt4">É um sujeito simples</button>
+      </li>
+      </li>
+    </ul>
+  </div>
 
-</div>
-  </body>
+<script>
+
+const perguntas = [
+
+  {
+    pergunta: "Pergunta 1",
+    respostas: ["A", "B", "C", "D"],
+    correta: 1
+  },
+
+  {
+    pergunta: "Pergunta 2",
+    respostas: ["A", "B", "C", "D"],
+    correta: 1
+  },
+
+  {
+    pergunta: "Pergunta 3",
+    respostas: ["A", "B", "C", "D"],
+    correta: 1
+  }
+
+];
+
+let perguntaAtual = 0;
+
+function carregarPergunta(){
+
+  document.getElementById("pergunta").innerText =
+  perguntas[perguntaAtual].pergunta;
+
+  document.getElementById("bt1").innerText =
+  perguntas[perguntaAtual].respostas[0];
+
+  document.getElementById("bt2").innerText =
+  perguntas[perguntaAtual].respostas[1];
+
+  document.getElementById("bt3").innerText =
+  perguntas[perguntaAtual].respostas[2];
+
+  document.getElementById("bt4").innerText =
+  perguntas[perguntaAtual].respostas[3];
+}
+
+function responder(opcao){
+
+  if(opcao === perguntas[perguntaAtual].correta){
+
+    perguntaAtual++;
+
+    if(perguntaAtual < perguntas.length){
+      carregarPergunta();
+    } else{
+      document.getElementById("pergunta").innerText = "Você venceu!";
+
+      document.querySelector(".botao-geral").style.display = "none";
+    }
+
+  } else{
+
+    document.getElementById("pergunta").innerText = "Você perdeu!";
+
+    document.querySelector(".botao-geral").style.display = "none";
+  }
+
+}
+
+</script>
+
+</body>
 </html>
