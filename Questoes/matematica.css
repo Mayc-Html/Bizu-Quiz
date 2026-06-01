@@ -1,25 +1,18 @@
 body {
   margin: 0;
  background-image: url(../HTMLgameplay-vitu/Imagens-vitu/OIP\ \(5\).webp);
-    background-size: 700px;
 
     background-position: center;
     background-repeat: no-repeat ;
     background-size: cover;
 }
 
-.pagina{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .numerador{
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   
   border-radius: 50%;
-  background: #4e23a4 ;
+ background: rgb(172, 152, 190);
 
    margin-left: 25px;
    margin-top: 30px;
@@ -27,43 +20,47 @@ body {
   justify-content: center;
   align-items: center;
 
-   font-size: 65px;
+   font-size: 70px;
   text-align: center;
-  color: #ffecec;
+  color: black;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .pergunta{
-  font-size: 75px;
+  font-size: 60px;
   text-align: center;
-  color: #2E2A66;
-  margin-top: 50px;
+  margin-top: 100px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.botoes{
+.botoes ul{
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px ;
+  grid-template-columns: repeat(2, 300px);
+  gap: 25px ;
 
   justify-content: center;
-  margin-top: 50px;
-  max-width: 550px;
+  margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
 }
 
 button {
-  font-size: 30px;
+  font-size: 35px;
   color: black;
-  
-  cursor: pointer;
-  border: 7px solid darkgrey;
-    background-color: chocolate;
- border-radius:  8px;
+    font-family: cursive;
+
+      cursor: pointer;
+    background-color: #b3834f;
+    box-shadow: inset 0 0 0 4px #8a5a2b;
+    outline: none;
+    border-radius: 8px;
  
     width: 300px;
     height: 100px;
-   
 }
 
 button:hover{
@@ -79,7 +76,11 @@ button:active{
 
 .credito{
   position: end;
-  font-size: 20px;
-  color: #2E2A66;
+  font-size: 25px;
   margin-top: 100px;
+  margin-left: 20px;
+}
+
+ul {
+  list-style-type: none;
 }
