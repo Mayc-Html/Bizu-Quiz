@@ -1,10 +1,13 @@
 body {
-  margin: 0;
- background-image: url(../HTMLgameplay-vitu/Imagens-vitu/OIP\ \(5\).webp);
+  margin-top: 40px;
+   font-family: 'Cherry Cream Soda', cursive;
+
+  background-image: url(../HTMLgameplay-vitu/Imagens-vitu/OIP\ \(5\).webp);
 
     background-position: center;
     background-repeat: no-repeat ;
     background-size: cover;
+    font-size: larger;
 }
 
 .numerador{
@@ -14,23 +17,18 @@ body {
   border-radius: 50%;
  background: rgb(172, 152, 190);
 
-   margin-left: 25px;
-   margin-top: 30px;
+ margin: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
 
-   font-size: 70px;
-  text-align: center;
-  color: black;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-size: 100px;
 }
 
 .pergunta{
-  font-size: 60px;
+  font-size: 65px;
   text-align: center;
-  margin-top: 100px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-top: 50px;
 }
 
 .botoes ul{
@@ -43,14 +41,13 @@ body {
   gap: 25px ;
 
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 80px;
   margin-left: auto;
   margin-right: auto;
 }
 
 button {
   font-size: 35px;
-  color: black;
     font-family: cursive;
 
       cursor: pointer;
