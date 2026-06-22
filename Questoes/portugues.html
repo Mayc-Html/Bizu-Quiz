@@ -1,102 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portugues</title>
+  <title>Português</title>
   <link rel="stylesheet" href="portugues.css">
 </head>
 
 <body>
-  <div class="começo">
+
+  <div class="comeco">
     <div class="numero">1.</div>
-    <h1 class=" pergunta" id="pergunta1">Na frase 'O sujeito foi preso porque roubou um dicionario', onde está o sujeito? </h1>
-  </div>
-  <div class="botao-geral">
-    <ul>
-      <li>
-      <li>
-        <button class="botao" onclick="responder(0)" id="bt1">No dicionário</button>
-        <button class="botao" onclick="responder(1)" id="bt2">Na cadeia</button>
-      </li>
-      <li>
 
-        <button class="botao" onclick="responder(2)" id="bt3">Oculto</button>
-        <button class="botao" onclick="responder(3)" id="bt4">É um sujeito simples</button>
-      </li>
-      </li>
-    </ul>
+    <h1 class="pergunta" id="pergunta"></h1>
   </div>
 
-<script>
+  <div class="botoes-geral">
+    
+        <button class="botao" onclick="responder(0)" id="bt1"></button>
 
-const perguntas = [
+        <button class="botao" onclick="responder(1)" id="bt2"></button>
+        
+        <button class="botao" onclick="responder(2)" id="bt3"></button>
+        
+        <button class="botao" onclick="responder(3)" id="bt4"></button>
+      
+    
+  </div>
 
-  {
-    pergunta: "Pergunta 1",
-    respostas: ["A", "B", "C", "D"],
-    correta: 1
-  },
+  <script>
 
-  {
-    pergunta: "Pergunta 2",
-    respostas: ["A", "B", "C", "D"],
-    correta: 1
-  },
+    const perguntas = [
 
-  {
-    pergunta: "Pergunta 3",
-    respostas: ["A", "B", "C", "D"],
-    correta: 1
-  }
+      {
+        pergunta: "Na frase 'O sujeito foi preso porque roubou um dicionário', onde está o sujeito?",
+        respostas: [
+          "No dicionário",
+          "Na cadeia",
+          "Oculto",
+          "É um sujeito simples"
+        ],
+        correta: 2
+      },
 
-];
+      {
+        pergunta: "Qual é o plural de pão?",
+        respostas: [
+          "Pãos",
+          "Pães",
+          "Pãis",
+          "Pãezes"
+        ],
+        correta: 1
+      },
 
-let perguntaAtual = 0;
+      {
+        pergunta: "Qual é o antônimo de feliz?",
+        respostas: [
+          "Alegre",
+          "Contente",
+          "Triste",
+          "Animado"
+        ],
+        correta: 2
+      }
 
-function carregarPergunta(){
+    ];
 
-  document.getElementById("pergunta").innerText =
-  perguntas[perguntaAtual].pergunta;
+    let perguntaAtual = 0;
 
-  document.getElementById("bt1").innerText =
-  perguntas[perguntaAtual].respostas[0];
+    function carregarPergunta() {
 
-  document.getElementById("bt2").innerText =
-  perguntas[perguntaAtual].respostas[1];
+      document.getElementById("pergunta").innerText =
+        perguntas[perguntaAtual].pergunta;
 
-  document.getElementById("bt3").innerText =
-  perguntas[perguntaAtual].respostas[2];
+      document.getElementById("bt1").innerText =
+        perguntas[perguntaAtual].respostas[0];
 
-  document.getElementById("bt4").innerText =
-  perguntas[perguntaAtual].respostas[3];
-}
+      document.getElementById("bt2").innerText =
+        perguntas[perguntaAtual].respostas[1];
 
-function responder(opcao){
+      document.getElementById("bt3").innerText =
+        perguntas[perguntaAtual].respostas[2];
 
-  if(opcao === perguntas[perguntaAtual].correta){
+      document.getElementById("bt4").innerText =
+        perguntas[perguntaAtual].respostas[3];
 
-    perguntaAtual++;
-
-    if(perguntaAtual < perguntas.length){
-      carregarPergunta();
-    } else{
-      document.getElementById("pergunta").innerText = "Você venceu!";
-
-      document.querySelector(".botao-geral").style.display = "none";
+      document.querySelector(".numero").innerText =
+        (perguntaAtual + 1) + ".";
     }
 
-  } else{
+    function responder(opcao) {
 
-    document.getElementById("pergunta").innerText = "Você perdeu!";
+      if (opcao === perguntas[perguntaAtual].correta) {
 
-    document.querySelector(".botao-geral").style.display = "none";
-  }
+        perguntaAtual++;
 
-}
+        if (perguntaAtual < perguntas.length) {
 
-</script>
+          carregarPergunta();
+
+        } else {
+
+          window.location.href = "parabens.html";
+
+        }
+
+      } else {
+
+        window.location.href = "erro.html";
+
+      }
+
+    }
+
+    carregarPergunta();
+
+  </script>
 
 </body>
+
 </html>

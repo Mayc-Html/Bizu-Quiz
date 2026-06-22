@@ -1,0 +1,16 @@
+{
+  "perguntas": [
+    {
+      "pergunta": "Quem pintou a Monalisa?",
+      "resposta": ["Everaldo", "Leornado Da Vinci", "Michelangelo", "Picasso"],
+      "correta": 1
+    },
+
+    {
+        "pergunta": "Quem pintou a Monalisa?",
+         " resposta": ["Everaldo", "Leornado Da Vinci", "Michelangelo", "Picasso"],
+          "correta": 1
+}
+  ]
+
+}
