@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>História e Filosofia</title>
+  <link rel="stylesheet" href="67codigo.css">
+</head>
+
+<body>
+
+  <div class="comeco">
+    <div class="numero">1.</div>
+
+    <h1 class="pergunta" id="pergunta"></h1>
+  </div>
+
+  <div class="botoes-geral">
+    
+        <button class="botao" onclick="responder(0)" id="bt1"></button>
+
+        <button class="botao" onclick="responder(1)" id="bt2"></button>
+        
+        <button class="botao" onclick="responder(2)" id="bt3"></button>
+        
+        <button class="botao" onclick="responder(3)" id="bt4"></button>
+      
+    
+  </div>
+
+  <script>
+
+    const perguntas = [
+      {
+        pergunta: "A principal característica do processo de sedentarização no período neolítico foi:",
+        respostas: [
+          "o uso exclusivo da caça e da pesca",
+          "o desenvolvimento da agricultura e da criação de animais",
+          "o abandono completo do uso da pedra",
+          "a invenção da escrita alfabética"
+        ],
+        correta: 1
+      },
+      {
+        pergunta: "No Egito Antigo, os faraós eram considerados:",
+        respostas: [
+          "representantes eleitos pelo povo",
+          "líderes militares sem função religiosa",
+          "figuras divinas ou escolhidas pelos deuses",
+          "sacerdotes subordinados aos camponeses"
+        ],
+        correta: 2
+      },
+      {
+        pergunta: "A democracia ateniense da Antiguidade era limitada porque:",
+        respostas: [
+          "permitia a participação de todos os habitantes da pólis",
+          "excluía mulheres, escravizados e estrangeiros da vida política",
+          "era controlada exclusivamente por reis",
+          "proibia qualquer tipo de debate público"
+        ],
+        correta: 1
+      },
+      {
+        pergunta: "Sobre o feudalismo na Idade Média, é correto afirmar que:",
+        respostas: [
+          "a economia era fortemente industrializada",
+          "o poder político era bastante centralizado nas mãos dos reis",
+          "a terra era a principal fonte de riqueza",
+          "os servos eram trabalhadores assalariados com ampla liberdade"
+        ],
+        correta: 2
+      },
+      {
+        pergunta: "As Cruzadas foram expedições organizadas principalmente para:",
+        respostas: [
+          "conquistar novas áreas na América",
+          "combater o crescimento do protestantismo",
+          "retomar territórios considerados sagrados pelos cristãos",
+          "expandir o socialismo na Europa medieval"
+        ],
+        correta: 2
+      },
+      {
+        pergunta: "A Filosofia surgiu na Grécia Antiga marcada pela busca de:",
+        respostas: [
+          "explicações baseadas apenas nos mitos",
+          "respostas fundamentadas na razão",
+          "verdades impostas exclusivamente pelos reis",
+          "ensinamentos religiosos obrigatórios"
+        ],
+        correta: 1
+      },
+      {
+        pergunta: "Sócrates ficou conhecido principalmente por:",
+        respostas: [
+          "defender que a verdade estava somente nos deuses",
+          "valorizar o diálogo e o questionamento crítico",
+          "criar a teoria do mundo das ideias",
+          "fundar o Liceu em Atenas"
+        ],
+        correta: 1
+      },
+      {
+        pergunta: "Para Platão, o mundo sensível é:",
+        respostas: [
+          "o espaço das ideias perfeitas e eternas",
+          "mais verdadeiro que o mundo inteligível",
+          "marcado pela mudança e pelas aparências",
+          "a única realidade que pode ser conhecida"
+        ],
+        correta: 2
+      },
+      {
+        pergunta: "Aristóteles afirmava que o ser humano é um 'animal político' porque:",
+        respostas: [
+          "vive isolado e rejeita a sociedade",
+          "só alcança sua realização plenamente em comunidade",
+          "participa naturalmente apenas de guerras",
+          "depende exclusivamente dos governantes para pensar"
+        ],
+        correta: 1
+      },
+      {
+        pergunta: "Os filósofos pré-socráticos buscavam principalmente:",
+        respostas: [
+          "explicar a origem do mundo por meio da razão",
+          "defender o poder absoluto dos imperadores",
+          "provar a superioridade dos mitos sobre a lógica",
+          "discutir apenas problemas éticos da cidade"
+        ],
+        correta: 0
+      }
+    ];
+
+    let perguntaAtual = 0;
+
+    function carregarPergunta() {
+
+      document.getElementById("pergunta").innerText =
+        perguntas[perguntaAtual].pergunta;
+
+      document.getElementById("bt1").innerText =
+        perguntas[perguntaAtual].respostas[0];
+
+      document.getElementById("bt2").innerText =
+        perguntas[perguntaAtual].respostas[1];
+
+      document.getElementById("bt3").innerText =
+        perguntas[perguntaAtual].respostas[2];
+
+      document.getElementById("bt4").innerText =
+        perguntas[perguntaAtual].respostas[3];
+
+      document.querySelector(".numero").innerText =
+        (perguntaAtual + 1) + ".";
+    }
+
+    function responder(opcao) {
+
+      if (opcao === perguntas[perguntaAtual].correta) {
+
+        perguntaAtual++;
+
+        if (perguntaAtual < perguntas.length) {
+
+          carregarPergunta();
+
+        } else {
+
+          window.location.href = "parabens.html";
+
+        }
+
+      } else {
+
+        window.location.href = "erro.html";
+
+      }
+
+    }
+
+    carregarPergunta();
+
+  </script>
+
+</body>
+
+</html>
