@@ -6,26 +6,140 @@
   </head>
   <body>
 
-<div>
-  <div class="numerador">1.</div>
-    
-  <h1 class="pergunta"> Complete a sequência
-  <var>2, 18, 12...
-  </var></h1>
 
-<div class="botoes">
-  <ul>
-    <li><button>19</button></li>
-    <li><button>14</button></li>
-    <li><button>20</button></li>
-    <li><button>22</button></li>
-  </ul>
-</div>
+  <div class="comeco">
+    <div class="numero">1.</div>
+
+    <h1 class="pergunta" id="pergunta"></h1>
+  </div>
+
+  <div class="botoes-geral">
+    
+        <button class="botao" onclick="responder(0)" id="bt1"></button>
+
+        <button class="botao" onclick="responder(1)" id="bt2"></button>
+        
+        <button class="botao" onclick="responder(2)" id="bt3"></button>
+        
+        <button class="botao" onclick="responder(3)" id="bt4"></button>
+      
+    
+  </div>
 
 <div>
   <p class="credito">@CREATED BY ALGUÉM</p>
 </div>
 
-</div>
-  </body>
+  <script>
+
+    const perguntas = [
+
+      {
+        pergunta: "Em que teorema estou pensando?",
+        respostas: [
+          "De Pitágoras",
+          "De Tales",
+          "De Gauss",
+          "De Pascal",
+        ],
+        correta: 2
+      },
+        
+      {
+        pergunta: " Qual o resultado da expressão: 8x7:28+1",
+        respostas: [
+          "3",
+          "5",
+          "2",
+          "15"
+        ],
+        correta: 0
+      },
+
+      {
+        pergunta: "2:0 = ?" ,
+        respostas: [
+          "",
+          "",
+          "",
+          ""
+        ],
+        correta: 3
+      },
+
+       {
+        pergunta: "Quem não era filósofo?" ,
+        respostas: [
+          "",
+          "case, quase, né?",
+          "o horário",
+          "Não possui"
+        ],
+        correta: 3
+      },
+      {
+        pergunta: `Na frase "Já é quase 5 da manhã", onde está o erro?`,
+        respostas: [
+          "Já",
+          "case, quase, né?",
+          "o horário",
+          "Não possui"
+        ],
+        correta: 3
+      },
+    ];
+
+    let perguntaAtual = 0;
+
+    function carregarPergunta() {
+
+      document.getElementById("pergunta").innerText =
+        perguntas[perguntaAtual].pergunta;
+
+      document.getElementById("bt1").innerText =
+        perguntas[perguntaAtual].respostas[0];
+
+      document.getElementById("bt2").innerText =
+        perguntas[perguntaAtual].respostas[1];
+
+      document.getElementById("bt3").innerText =
+        perguntas[perguntaAtual].respostas[2];
+
+      document.getElementById("bt4").innerText =
+        perguntas[perguntaAtual].respostas[3];
+
+      document.querySelector(".numero").innerText =
+        (perguntaAtual + 1) + ".";
+    }
+
+    function responder(opcao) {
+
+      if (opcao === perguntas[perguntaAtual].correta) {
+
+        perguntaAtual++;
+
+        if (perguntaAtual < perguntas.length) {
+
+          carregarPergunta();
+
+        } else {
+
+          window.location.href = "parabens.html";
+
+        }
+
+      } else {
+
+        window.location.href = "erro.html";
+
+      }
+
+    }
+
+    carregarPergunta();
+
+  </script>
+
+</body>
+
 </html>
