@@ -1,207 +1,207 @@
 <html>
-  <head>
-    <meta charset="utf-8"/>
+
+<head>
+    <meta charset="utf-8" />
     <title>MATEMÁTICA</title>
     <link rel="stylesheet" href="matematica.css">
-  </head>
-  <body>
+</head>
+
+<body>
 
 
-  <div class="comeco">
-    <div class="numero">1.</div>
+    <div class="comeco">
+        <div class="numerador">1.</div>
 
-    <h1 class="pergunta" id="pergunta"></h1>
-  </div>
+        <h1 class="pergunta" id="pergunta"></h1>
+    </div>
 
-  <div class="botoes-geral">
-    
-        <button class="botao" onclick="responder(0)" id="bt1"></button>
+    <div class="botoes">
+        <ul>
+            <button onclick="responder(0)" id="bt1"></button>
 
-        <button class="botao" onclick="responder(1)" id="bt2"></button>
-        
-        <button class="botao" onclick="responder(2)" id="bt3"></button>
-        
-        <button class="botao" onclick="responder(3)" id="bt4"></button>
-      
-    
-  </div>
+            <button onclick="responder(1)" id="bt2"></button>
 
-<div>
-  <p class="credito">@CREATED BY ALGUÉM</p>
-</div>
+            <button onclick="responder(2)" id="bt3"></button>
 
-  <script>
+            <button onclick="responder(3)" id="bt4"></button>
+        </ul>
 
-    const perguntas = [
+    </div>
 
-      {
-        pergunta: "Em que teorema estou pensando?",
-        respostas: [
-          "De Pitágoras",
-          "De Tales",
-          "De Gauss",
-          "De Pascal",
-        ],
-        correta: 2
-      },
-        
-      {
-        pergunta: " Qual o resultado da expressão: 8x7:28+1",
-        respostas: [
-          "3",
-          "5",
-          "2",
-          "15"
-        ],
-        correta: 0
-      },
+    <div>
+        <p class="credito">@CREATED BY ALGUÉM</p>
+    </div>
 
-      {
-        pergunta: "2:0 = ?" ,
-        respostas: [
-          "",
-          "",
-          "",
-          "",
-        ],
-        correta: 3
-      },
+    <script>
+        const perguntas = [
 
-       {
-        pergunta: "Quem não era filósofo?" ,
-        respostas: [
-          "Pitágoras",
-          "René Descartes?",
-          " Blaise Pascal",
-          "Leonhard Euler",
-        ],
-        correta: 2
-      },
+            {
+                pergunta: "Em que teorema estou pensando?",
+                respostas: [
+                    "De Pitágoras",
+                    "De Tales",
+                    "De Gauss",
+                    "De Pascal",
+                ],
+                correta: 2
+            },
 
-      {
-        pergunta: "Quantos anagramas podem ser formados com a palavra 'Banana'",
-        respostas: [
-          "720",
-          "120",
-          "60",
-          "360",
-        ],
-        correta: 1
-      },
+            {
+                pergunta: " Qual o resultado da expressão: 8x7:28+1",
+                respostas: [
+                    "3",
+                    "5",
+                    "2",
+                    "15"
+                ],
+                correta: 0
+            },
 
-      {
-        pergunta: "Complete a sequência 2, 12, 18...",
-        respostas: [
-          "19",
-          "14",
-          "20",
-          "22",
-        ],
+            {
+                pergunta: "2:0 = ?",
+                respostas: [
+                    "",
+                    "",
+                    "",
+                    "",
+                ],
+                correta: 3
+            },
 
-        correta: 0
-      },
+            {
+                pergunta: "Quem não era filósofo?",
+                respostas: [
+                    "Pitágoras",
+                    "René Descartes",
+                    " Blaise Pascal",
+                    "Leonhard Euler",
+                ],
+                correta: 3
+            },
 
-      {
-        pergunta: " 25 + 13 - 36",
-        respostas: [
-          "",
-          "",
-          "",
-          "",
-        ],
+            {
+                pergunta: "Quantos anagramas podem ser formados com a palavra 'Banana'",
+                respostas: [
+                    "720",
+                    "120",
+                    "60",
+                    "360",
+                ],
+                correta: 1
+            },
 
-        correta: 0
-      },
+            {
+                pergunta: "Complete a sequência 2, 12, 18...",
+                respostas: [
+                    "19",
+                    "14",
+                    "20",
+                    "22",
+                ],
 
-          {
-        pergunta: " 25 + 13 - 36",
-        respostas: [
-          "",
-          "",
-          "",
-          "",
-        ],
+                correta: 0
+            },
 
-        correta: 0
-      },
+            {
+                pergunta: " 25 + 13 - 36",
+                respostas: [
+                    "",
+                    "",
+                    "",
+                    "",
+                ],
 
-          {
-        pergunta: "",
-        respostas: [
-          "",
-          "",
-          "",
-          "",
-        ],
+                correta: 0
+            },
 
-        correta: 0
-      },
+            {
+                pergunta: " 25 + 13 - 36",
+                respostas: [
+                    "",
+                    "",
+                    "",
+                    "",
+                ],
 
-          {
-        pergunta: "Quantos os divisores de 42?",
-        respostas: [
-          "12",
-          "4",
-          "16",
-          "8",
-        ],
+                correta: 0
+            },
 
-        correta: 2
-      },
+            {
+                pergunta: "",
+                respostas: [
+                    "",
+                    "",
+                    "",
+                    "",
+                ],
 
-    ];
+                correta: 0
+            },
+
+            {
+                pergunta: "Quantos os divisores de 42?",
+                respostas: [
+                    "12",
+                    "4",
+                    "16",
+                    "8",
+                ],
+
+                correta: 2
+            },
+
+        ];
 
 
-    let perguntaAtual = 0;
+        let perguntaAtual = 0;
 
-    function carregarPergunta() {
+        function carregarPergunta() {
 
-      document.getElementById("pergunta").innerText =
-        perguntas[perguntaAtual].pergunta;
+            document.getElementById("pergunta").innerText =
+                perguntas[perguntaAtual].pergunta;
 
-      document.getElementById("bt1").innerText =
-        perguntas[perguntaAtual].respostas[0];
+            document.getElementById("bt1").innerText =
+                perguntas[perguntaAtual].respostas[0];
 
-      document.getElementById("bt2").innerText =
-        perguntas[perguntaAtual].respostas[1];
+            document.getElementById("bt2").innerText =
+                perguntas[perguntaAtual].respostas[1];
 
-      document.getElementById("bt3").innerText =
-        perguntas[perguntaAtual].respostas[2];
+            document.getElementById("bt3").innerText =
+                perguntas[perguntaAtual].respostas[2];
 
-      document.getElementById("bt4").innerText =
-        perguntas[perguntaAtual].respostas[3];
+            document.getElementById("bt4").innerText =
+                perguntas[perguntaAtual].respostas[3];
 
-      document.querySelector(".numero").innerText =
-        (perguntaAtual + 1) + ".";
-    }
+            document.querySelector(".numero").innerText =
+                (perguntaAtual + 1) + ".";
+        }
 
-    function responder(opcao) {
+        function responder(opcao) {
 
-      if (opcao === perguntas[perguntaAtual].correta) {
+            if (opcao === perguntas[perguntaAtual].correta) {
 
-        perguntaAtual++;
+                perguntaAtual++;
 
-        if (perguntaAtual < perguntas.length) {
+                if (perguntaAtual < perguntas.length) {
 
-          carregarPergunta();
+                    carregarPergunta();
 
-        } else {
+                } else {
 
-          window.location.href = "parabens.html";
+                    window.location.href = "parabens.html";
+
+                }
+
+            } else {
+
+                window.location.href = "erro.html";
+
+            }
 
         }
 
-      } else {
-
-        window.location.href = "erro.html";
-
-      }
-
-    }
-
-    carregarPergunta();
-
-  </script>
+        carregarPergunta();
+    </script>
 
 </body>
 
