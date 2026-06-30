@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="quimica.css">
-    <title>Questões de Química</title>
+    <title>Química</title>
 </head>
 <body>
 
@@ -13,25 +13,28 @@
 
     <div class="numero">1.</div>
 
-  <h1 class="pergunta">Qual dos processos abaixo é um exemplo de fenômeno exclusivamente físico?</h1>
+  <h1 class="pergunta" id="pergunta"></h1>
 
  </div>
 
   <div class="botao-geral">
 
-    <ul>
-        <li>
-        <button class="botao">Ferrugem formando-se em um prego de ferro.</button>
-        <button class="botao">Academia em um dia ensolarado</button>
-        </li>
+    <button class="botao"
+    onclick="responder(0)" id="bt1">
+    </button>
 
-        <li>
-        <button class="botao">Açúcar caramelizado ao ser aquecido</button>
-        <button class="botao">Água evaporando de uma poça</button>
-        </li>
+    <button class="botao"
+    onclick="responder(1)" id="bt2">
+    </button>
 
-    </ul>
+    <button class="botao"
+    onclick="responder(2)" id="bt3">
+    </button>
 
+    <button class="botao"
+    onclick="responder(3)" id="bt4">
+    </button>
+    
  </div>
  <script>
 
