@@ -30,25 +30,23 @@
     font-size: 55px;
 }
 .botoes-geral{
-  
-  
-    margin-top: 200px;
-    display: grid;
-    grid-template-columns: repeat(2,300px);
-    gap: 20px;
-    width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 100px auto 0 auto;
 
+    display: grid;
+
+    grid-template-columns: repeat(2, 400px);
+
+    gap: 25px;
+
+    width: fit-content;
 }
+
 
 .botao{
 
     width: 400px;
     
     height: 125px;
-    margin: 20px;
-    margin-top: 50px;
 
     font-size: 40px;
 
@@ -78,4 +76,5 @@
 }
 ul{
   list-style: none;
+  
 }

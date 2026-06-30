@@ -1,28 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artes</title><link rel="stylesheet" href="artes.css">
-</head>
-<body>
-    <div class="começo">
-    <div class="numero">1.</div>
-  <h1 class=" pergunta">Quem pintou a Monalisa?</h1>
- </div>
- <div class="botao-geral">
-    <ul > <li>
-        <li>
-        <button class="botao" >Everaldo</button>
-        <button class="botao" onclick="window.location.href='artes-2.html'">Leornado Da Vinci</button>
-        </li>
-                <li>
+<html lang="pt-BR">
 
-        <button class="botao">Pablo</button>
-        <button class="botao">Michelango</button>
-                </li>
-                </li>
-    </ul>
- </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artes</title>
+  <link rel="stylesheet" href="artes.css" >
+</head>
+
+<body>
+
+  <div class="comeco">
+    <div class="numero">1.</div>
+
+    <h1 class="pergunta" id="pergunta"></h1>
+  </div>
+
+  <div class="botoes-geral">
+    
+        <button class="botao" onclick="responder(0)" id="bt1"></button>
+
+        <button class="botao" onclick="responder(1)" id="bt2"></button>
+        
+        <button class="botao" onclick="responder(2)" id="bt3"></button>
+        
+        <button class="botao" onclick="responder(3)" id="bt4"></button>
+      
+    
+  </div>
+
+  <script>
+
+    const perguntas = [
+
+      {
+        pergunta: "Quem pintou a Monalisa?",
+        respostas: [
+          "Everaldo",
+          "Leonardo Da Vinci",
+          "Michelangelo",
+          "Picasso"
+        ],
+        correta: 1
+      },
+
+      {
+        pergunta: "Qual  e o movimento artístico pertence essa pintura? ",
+        respostas: [
+          
+          "Arte gótica",
+          "Barroco",
+          "impressionismo",
+          "shit post"
+        ],
+        correta: 3
+        
+      },
+
+
+    ];
+
+    let perguntaAtual = 0;
+
+    function carregarPergunta() {
+
+      document.getElementById("pergunta").innerText =
+        perguntas[perguntaAtual].pergunta;
+
+      document.getElementById("bt1").innerText =
+        perguntas[perguntaAtual].respostas[0];
+
+      document.getElementById("bt2").innerText =
+        perguntas[perguntaAtual].respostas[1];
+
+      document.getElementById("bt3").innerText =
+        perguntas[perguntaAtual].respostas[2];
+
+      document.getElementById("bt4").innerText =
+        perguntas[perguntaAtual].respostas[3];
+
+      document.querySelector(".numero").innerText =
+        (perguntaAtual + 1) + ".";
+    }
+
+    function responder(opcao) {
+
+      if (opcao === perguntas[perguntaAtual].correta) {
+
+        perguntaAtual++;
+
+        if (perguntaAtual < perguntas.length) {
+
+          carregarPergunta();
+
+        } else {
+
+          window.location.href = "parabens.html";
+
+        }
+
+      } else {
+
+        window.location.href = "erro.html";
+
+      }
+
+    }
+
+    carregarPergunta();
+
+  </script>
+
 </body>
-</html>
