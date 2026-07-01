@@ -103,41 +103,30 @@
             },
 
             {
-                pergunta: " 25 + 13 - 36",
+                pergunta: "15+35-12+20-45 ",
                 respostas: [
-                    "",
-                    "",
-                    "",
-                    "",
+                    "12",
+                    "30",
+                    "13",
+                    "-3",
                 ],
 
-                correta: 0
+                correta: 2
             },
 
             {
-                pergunta: " 25 + 13 - 36",
+                pergunta: "Todo quadrado é um retângulo, mas nem todo retângulo é um quadrado",
                 respostas: [
-                    "",
-                    "",
-                    "",
-                    "",
+                    "sim",
+                    "não",
+                    "sei não",
+                    "tem que vê com os cara",
                 ],
 
                 correta: 0
             },
 
-            {
-                pergunta: "",
-                respostas: [
-                    "",
-                    "",
-                    "",
-                    "",
-                ],
-
-                correta: 0
-            },
-
+            
             {
                 pergunta: "Quantos os divisores de 42?",
                 respostas: [
@@ -147,9 +136,22 @@
                     "8",
                 ],
 
-                correta: 2
+                correta: 0
             },
 
+            {
+                pergunta: "A partir de qual assunto as letras foram introduzidas na matemática",
+                respostas: [
+                    "aritmetria",
+                    "algebra",
+                    "geometria",
+                    "polinomios",
+                ],
+
+                correta: 1
+            },
+
+            
         ];
 
 
@@ -172,7 +174,7 @@
             document.getElementById("bt4").innerText =
                 perguntas[perguntaAtual].respostas[3];
 
-            document.querySelector(".numero").innerText =
+            document.querySelector(".numerador").innerText =
                 (perguntaAtual + 1) + ".";
         }
 
