@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Derrota — Quiz</title>
+  <style>
+    :root {
+      --bg-start: #ffffff;
+      --bg-end: #ffffff;
+      --accent: #e74c3c;
+      --btn: #f1c40f;
+      --text: #000000;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    main {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 920px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    @media (min-width: 860px) {
+      .card {
+        flex-direction: row;
+        text-align: left;
+      }
+    }
+
+    .visual img {
+      max-width: 420px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .meta {
+      flex: 1 1 auto;
+      padding: 6px 4px;
+    }
+
+    h1 {
+      margin: 6px 0 8px 0;
+      font-size: 40px;
+      color: var(--accent);
+      line-height: 1.05;
+    }
+
+    p {
+      margin: 0 0 16px 0;
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      appearance: none;
+      -webkit-appearance: none;
+      border: none;
+      cursor: pointer;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .btn.primary {
+      background: var(--btn);
+      color: #111;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 2px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .btn:focus {
+      outline: 3px solid rgba(241, 196, 15, 0.25);
+      outline-offset: 2px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <main role="main">
+    <section class="card" aria-labelledby="titulo-derrota">
+      <div class="visual" aria-hidden="true">
+        <img src="WhatsApp%20Image%202026-05-04%20at%2019.01.47.jpeg" alt="Lâmpada sorridente" />
+      </div>
+
+      <div class="meta">
+        <h1 id="titulo-derrota">SEU BIZONHO!</h1>
+        <p>Que pena,você não foi bizurado. Clique em <strong>Recomeçar</strong> para tentar ser alguem na vida.</p>
+
+        <div class="actions">
+          <button type="button" class="btn primary" id="recomecar">Recomeçar</button>
+          <button type="button" class="btn secondary" id="voltar">Voltar</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const goToStart = () => {
+        // Usamos location.replace para evitar manter esta página no histórico
+        location.replace('67codigo.html');
+      };
+
+      document.getElementById('recomecar').addEventListener('click', goToStart);
+      document.getElementById('voltar').addEventListener('click', goToStart);
+
+      // Permitir ativação via tecla Enter/Space quando o botão estiver em foco
+      ['recomecar', 'voltar'].forEach((id) => {
+        const el = document.getElementById(id);
+        el.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            el.click();
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>
