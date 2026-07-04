@@ -33,178 +33,153 @@
     </div>
 
     <script>
-        const perguntas = [
+const perguntas = [
+    {
+        pergunta: "Qual é a principal função do teclado?",
+        respostas: [
+            "Imprimir documentos",
+            "Digitar informações",
+            "Reproduzir músicas",
+            "Tirar fotos"
+        ],
+        correta: 1
+    },
 
-            {
-                pergunta: " Qual é a principal função do teclado?",
-                respostas: [
-                    "Imprimir documentos",
-                    "Reproduzir músicas",
-                    "Digitar Informações",
-                    "Tirar"
-                ],
-                correta: 2
-            },
+    {
+        pergunta: "Qual destes é um dispositivo de saída?",
+        respostas: [
+            "Mouse",
+            "Teclado",
+            "Monitor",
+            "Microfone"
+        ],
+        correta: 2
+    },
 
-            {
-                pergunta: " Qual progama é usado  para criar apresentações?",
-                respostas: [
-                    "Paint",
-                    "PowerPoint",
-                    "Bloco de Notas",
-                    "Calculadora"
-                ],
-                correta: 1
-            },
+    {
+        pergunta: "Qual programa é usado para criar apresentações?",
+        respostas: [
+            "Paint",
+            "PowerPoint",
+            "Bloco de Notas",
+            "Calculadora"
+        ],
+        correta: 1
+    },
 
-            {
-                pergunta: "Quais são as cores primárias?",
-                respostas: [
-                    "Verde,laranja e roxo",
-                    "Vermelho,azul e amarelo",
-                    "Azul,verde e amarelo",
-                    "Preto,branco e cinza",
-                ],
-                correta: 2
-            },
+    {
+        pergunta: "Qual tecla é usada para apagar o caractere à esquerda?",
+        respostas: [
+            "Enter",
+            "Shift",
+            "delete",
+            "Esc"
+        ],
+        correta: 2
+    },
 
-            {
-                pergunta: "Quem cortou parte da própria orelha?",
-                respostas: [
-                    "Claude Monet",
-                    "Pablo Picasso",
-                    " Salvador Dali",
-                    "Vincent Van Gogh",
-                ],
-                correta: 3
-            },
+    {
+        pergunta: "O que significa CPU?",
+        respostas: [
+            "Unidade Central de Processamento",
+            "Controle Principal Universal",
+            "Computador Pessoal Unido",
+            "Central de Programas Universais"
+        ],
+        correta: 0
+    },
 
-            {
-                pergunta: "O cubismo ficou famoso principalmente por:",
-                respostas: [
-                    "Retratar Sonhos",
-                    "Pintar apenas paisagens",
-                    "Usar somente tinta preta",
-                    "Divdir as figuras em formas geométricas",
-                ],
-                correta: 3
-            },
+    {
+        pergunta: "Qual destes é um navegador de internet?",
+        respostas: [
+            "Word",
+            "Excel",
+            "Google Chrome",
+            "Paint"
+        ],
+        correta: 2
+    },
 
-            {
-                pergunta: "Qual é a cor do fusca de everaldo?",
-                respostas: [
-                    "Bege",
-                    "Marrom ",
-                    "Preto",
-                    "Branco",
-                ],
+    {
+        pergunta: "Qual destes é um sistema operacional?",
+        respostas: [
+            "Windows",
+            "PowerPoint",
+            "Photoshop",
+            "Chrome"
+        ],
+        correta: 0
+    },
 
-                correta: 0
-            },
+    {
+        pergunta: "Qual destes serve para armazenar arquivos?",
+        respostas: [
+            "Pendrive",
+            "Mouse",
+            "Monitor",
+            "Teclado"
+        ],
+        correta: 0
+    },
 
-            {
-                pergunta: "Qual destes é um tipo de escultura? ",
-                respostas: [
-                  "Papel sulfite",
-                  "Caderno",
-                  "Mármore",
-                    "Pendrive",
-                ],
+    {
+        pergunta: "O atalho Ctrl + C serve para:",
+        respostas: [
+            "Colar",
+            "Copiar",
+            "Cortar",
+            "Salvar"
+        ],
+        correta: 1
+    },
 
-                correta: 2
-            },
+    {
+        pergunta: "Qual destes NÃO faz parte do computador?",
+        respostas: [
+            "Processador",
+            "Memória RAM",
+            "Placa-mãe",
+            "Televisão"
+        ],
+        correta: 3
+    }
+];
 
-            {
-                pergunta: "Qual destas NÃO é uma linguaguem artística?",
-                respostas: [
-                    "Música",
-                    "Dança",
-                    "Teatro",
-                    "Teclado",
-                ],
+let perguntaAtual = 0;
 
-                correta: 3
-            },
+function carregarPergunta() {
+    document.getElementById("pergunta").innerText =
+        perguntas[perguntaAtual].pergunta;
 
-            
-            {
-                pergunta: "Quem pintou a Cappela sistina?",
-                respostas: [
-                    "M/chelangelo",
-                    "michelangelo",
-                    "michelan",
-                    "Tartaruga Ninja",
-                ],
+    document.getElementById("bt1").innerText =
+        perguntas[perguntaAtual].respostas[0];
 
-                correta: 3
-            },
+    document.getElementById("bt2").innerText =
+        perguntas[perguntaAtual].respostas[1];
 
-            {
-                pergunta: "Qual e meu cantor favorito?",
-                respostas: [
-                    "Daniel Ceaser",
-                    "Frank Ocean",
-                    "Brent Fayaz",
-                    "Gil Bala",
-                ],
+    document.getElementById("bt3").innerText =
+        perguntas[perguntaAtual].respostas[2];
 
-                correta: 1
-            },
+    document.getElementById("bt4").innerText =
+        perguntas[perguntaAtual].respostas[3];
 
-            
-        ];
+    document.querySelector(".numerador").innerText =
+        (perguntaAtual + 1) + ".";
+}
 
+function responder(opcao) {
+    if (opcao === perguntas[perguntaAtual].correta) {
+        perguntaAtual++;
 
-        let perguntaAtual = 0;
-
-        function carregarPergunta() {
-
-            document.getElementById("pergunta").innerText =
-                perguntas[perguntaAtual].pergunta;
-
-            document.getElementById("bt1").innerText =
-                perguntas[perguntaAtual].respostas[0];
-
-            document.getElementById("bt2").innerText =
-                perguntas[perguntaAtual].respostas[1];
-
-            document.getElementById("bt3").innerText =
-                perguntas[perguntaAtual].respostas[2];
-
-            document.getElementById("bt4").innerText =
-                perguntas[perguntaAtual].respostas[3];
-
-            document.querySelector(".numerador").innerText =
-                (perguntaAtual + 1) + ".";
+        if (perguntaAtual < perguntas.length) {
+            carregarPergunta();
+        } else {
+            window.location.href = "parabens.html";
         }
+    } else {
+        window.location.href = "erro.html";
+    }
+}
 
-        function responder(opcao) {
-
-            if (opcao === perguntas[perguntaAtual].correta) {
-
-                perguntaAtual++;
-
-                if (perguntaAtual < perguntas.length) {
-
-                    carregarPergunta();
-
-                } else {
-
-                    window.location.href = "parabens.html";
-
-                }
-
-            } else {
-
-                window.location.href = "erro.html";
-
-            }
-
-        }
-
-        carregarPergunta();
-    </script>
-
-</body>
-
-</html>
+carregarPergunta();
+</script>
