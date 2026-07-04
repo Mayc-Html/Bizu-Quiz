@@ -13,9 +13,6 @@ text-align: center;
 animation: subir 15s linear infinite forwards;
 }
 
-
-
-
 .apresentacao{
   margin-top: 200px;
   font-size: 50px;
@@ -42,6 +39,22 @@ p{
 }
 
 .video{
-
   object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+
+  .apresentacao{
+    font-size: 30px;
+  }
+ 
+  p{
+    font-size: 25px;
+  }
+
+  .dialogo{
+ padding: 20px;
+    font-size: 25px;
+  }
+
 }

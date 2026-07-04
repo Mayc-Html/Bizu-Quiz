@@ -1,0 +1,185 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>ARTES</title>
+    <link rel="stylesheet" href="/Questoes/matematica.css">
+</head>
+
+<body>
+
+
+    <div class="comeco">
+        <div class="numerador">1.</div>
+
+        <h1 class="pergunta" id="pergunta"></h1>
+    </div>
+
+    <div class="botoes">
+        <ul>
+            <button onclick="responder(0)" id="bt1"></button>
+
+            <button onclick="responder(1)" id="bt2"></button>
+
+            <button onclick="responder(2)" id="bt3"></button>
+
+            <button onclick="responder(3)" id="bt4"></button>
+        </ul>
+
+    </div>
+
+    <div>
+        <p class="credito">@CREATED BY ALGUÉM</p>
+    </div>
+
+    <script>
+const perguntas = [
+    {
+        pergunta: "Qual é a principal função do teclado?",
+        respostas: [
+            "Imprimir documentos",
+            "Digitar informações",
+            "Reproduzir músicas",
+            "Tirar fotos"
+        ],
+        correta: 1
+    },
+
+    {
+        pergunta: "Qual destes é um dispositivo de saída?",
+        respostas: [
+            "Mouse",
+            "Teclado",
+            "Monitor",
+            "Microfone"
+        ],
+        correta: 2
+    },
+
+    {
+        pergunta: "Qual programa é usado para criar apresentações?",
+        respostas: [
+            "Paint",
+            "PowerPoint",
+            "Bloco de Notas",
+            "Calculadora"
+        ],
+        correta: 1
+    },
+
+    {
+        pergunta: "Qual tecla é usada para apagar o caractere à esquerda?",
+        respostas: [
+            "Enter",
+            "Shift",
+            "delete",
+            "Esc"
+        ],
+        correta: 2
+    },
+
+    {
+        pergunta: "O que significa CPU?",
+        respostas: [
+            "Unidade Central de Processamento",
+            "Controle Principal Universal",
+            "Computador Pessoal Unido",
+            "Central de Programas Universais"
+        ],
+        correta: 0
+    },
+
+    {
+        pergunta: "Qual destes é um navegador de internet?",
+        respostas: [
+            "Word",
+            "Excel",
+            "Google Chrome",
+            "Paint"
+        ],
+        correta: 2
+    },
+
+    {
+        pergunta: "Qual destes é um sistema operacional?",
+        respostas: [
+            "Windows",
+            "PowerPoint",
+            "Photoshop",
+            "Chrome"
+        ],
+        correta: 0
+    },
+
+    {
+        pergunta: "Qual destes serve para armazenar arquivos?",
+        respostas: [
+            "Pendrive",
+            "Mouse",
+            "Monitor",
+            "Teclado"
+        ],
+        correta: 0
+    },
+
+    {
+        pergunta: "O atalho Ctrl + C serve para:",
+        respostas: [
+            "Colar",
+            "Copiar",
+            "Cortar",
+            "Salvar"
+        ],
+        correta: 1
+    },
+
+    {
+        pergunta: "Qual destes NÃO faz parte do computador?",
+        respostas: [
+            "Processador",
+            "Memória RAM",
+            "Placa-mãe",
+            "Televisão"
+        ],
+        correta: 3
+    }
+];
+
+let perguntaAtual = 0;
+
+function carregarPergunta() {
+    document.getElementById("pergunta").innerText =
+        perguntas[perguntaAtual].pergunta;
+
+    document.getElementById("bt1").innerText =
+        perguntas[perguntaAtual].respostas[0];
+
+    document.getElementById("bt2").innerText =
+        perguntas[perguntaAtual].respostas[1];
+
+    document.getElementById("bt3").innerText =
+        perguntas[perguntaAtual].respostas[2];
+
+    document.getElementById("bt4").innerText =
+        perguntas[perguntaAtual].respostas[3];
+
+    document.querySelector(".numerador").innerText =
+        (perguntaAtual + 1) + ".";
+}
+
+function responder(opcao) {
+    if (opcao === perguntas[perguntaAtual].correta) {
+        perguntaAtual++;
+
+        if (perguntaAtual < perguntas.length) {
+            carregarPergunta();
+        } else {
+            window.location.href = "parabens.html";
+        }
+    } else {
+        window.location.href = "erro.html";
+    }
+}
+
+carregarPergunta();
+</script>

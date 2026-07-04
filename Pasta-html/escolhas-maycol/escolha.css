@@ -1,10 +1,9 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
 
 *{
     margin: 0px;
     padding: 0px;
-    font-family: sans-serif;
+    font-family: 'Cherry Cream Soda' ;
     
 }
 
@@ -71,5 +70,17 @@ h1{
     margin-right: 20px;
     text-align: end;
     font-size: 10px;
+    font-family: 'Cherry Cream Soda', cursive;
+    align-items: left;
+}
+.botao-genio {
+    padding: 15px 40px;      /* Dá espaço para a palavra respirar */
+    font-size: 20px;         /* Deixa a palavra grande */
+    font-weight: bold;       /* Deixa a letra grossa */
+    text-align: center;      /* Garante que a palavra fique no meio */
+    background-color: #b3834f;
+    cursor: pointer;
+    border: 5px solid #6b4a2f;
+    color: white;
     
 }
