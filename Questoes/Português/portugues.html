@@ -2,68 +2,70 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Português</title>
-    <link rel="stylesheet" href="portugues.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Português</title>
+  <link rel="stylesheet" href="portugues.css">
 </head>
 
 <body>
 
-    <div class="comeco">
-        <div class="numero">1.</div>
+  <div class="comeco">
+    <div class="numero">1.</div>
 
-        <h1 class="pergunta" id="pergunta"></h1>
-    </div>
+    <h1 class="pergunta" id="pergunta"></h1>
+  </div>
 
-    <div class="botoes-geral">
-
+  <div class="botoes-geral">
+    
         <button class="botao" onclick="responder(0)" id="bt1"></button>
 
         <button class="botao" onclick="responder(1)" id="bt2"></button>
-
+        
         <button class="botao" onclick="responder(2)" id="bt3"></button>
-
+        
         <button class="botao" onclick="responder(3)" id="bt4"></button>
+      
+    
+  </div>
 
+  <script>
 
-    </div>
+    const perguntas = [
 
-    <script>
-        const perguntas = [
+      {
+        pergunta: "Na frase 'O sujeito foi preso porque roubou um dicionário', onde está o sujeito?",
+        respostas: [
+          "No dicionário",
+          "Na cadeia",
+          "Oculto",
+          "É um sujeito simples"
+        ],
+        correta: 1
+      },
 
-            {
-                pergunta: "Na frase 'O sujeito foi preso porque roubou um dicionário', onde está o sujeito?",
-                respostas: [
-                    "No dicionário",
-                    "Na cadeia",
-                    "Oculto",
-                    "É um sujeito simples"
-                ],
-                correta: 1
-            },
+      {
+        pergunta: 'Qual é o sujeito da oração "Os alunos estudaram para a prova"?',
+        respostas: [
+          "Estudaram",
+          "Para prova",
+          "Os alunos",
+          "Prova"
+        ],
+        correta: 2
+      },
 
-            {
-                pergunta: 'Qual é o sujeito da oração "Os alunos estudaram para a prova"?',
-                respostas: [
-                    "Estudaram",
-                    "Para prova",
-                    "Os alunos",
-                    "Prova"
-                ],
-                correta: 2
-            },
+      {
+        pergunta: `Na frase "João comeu o bolo inteiro", quem saiu mais prejudicado?`,
+        respostas: [
+          "João",
+          "O bolo",
+          "Quem chegou depois",
+          "O nutricionista"
+        ],
+        correta: 2
+      },
 
-            {
-                pergunta: `Na frase "João comeu o bolo inteiro", quem saiu mais prejudicado?`,
-                respostas: [
-                    "João",
-                    "O bolo",
-                    "Quem chegou depois",
-                    "O nutricionista"
-                ],
-                correta: 2
-            },
        {
         pergunta: `Na frase "Já é quase 5 da manhã", onde está o erro?`,
         respostas: [
@@ -72,7 +74,7 @@
           "o horário",
           "Não possui"
         ],
-        correta: 3
+        cofrreta: 3
       },
       {
         pergunta:'Complete a frase: "A gente ___ para a praia."',
@@ -137,76 +139,56 @@
 
     ];
 
-            {
-                pergunta: `Na frase "Já é quase 5 da manhã", onde está o erro?`,
-                respostas: [
-                    "Já",
-                    "case, quase, né?",
-                    "o horário",
-                    "Não possui"
-                ],
-                correta: 3
-            }, {
-                pergunta: `Na frase "Já é quase 5 da manhã", onde está o erro?`,
-                respostas: [
-                    "Já",
-                    "case, quase, né?",
-                    "o horário",
-                    "Não possui"
-                ],
-                correta: 3
-            },
-        ];
+    let perguntaAtual = 0;
 
-        let perguntaAtual = 0;
+    function carregarPergunta() {
 
-        function carregarPergunta() {
+      document.getElementById("pergunta").innerText =
+        perguntas[perguntaAtual].pergunta;
 
-            document.getElementById("pergunta").innerText =
-                perguntas[perguntaAtual].pergunta;
+      document.getElementById("bt1").innerText =
+        perguntas[perguntaAtual].respostas[0];
 
-            document.getElementById("bt1").innerText =
-                perguntas[perguntaAtual].respostas[0];
+      document.getElementById("bt2").innerText =
+        perguntas[perguntaAtual].respostas[1];
 
-            document.getElementById("bt2").innerText =
-                perguntas[perguntaAtual].respostas[1];
+      document.getElementById("bt3").innerText =
+        perguntas[perguntaAtual].respostas[2];
 
-            document.getElementById("bt3").innerText =
-                perguntas[perguntaAtual].respostas[2];
+      document.getElementById("bt4").innerText =
+        perguntas[perguntaAtual].respostas[3];
 
-            document.getElementById("bt4").innerText =
-                perguntas[perguntaAtual].respostas[3];
+      document.querySelector(".numero").innerText =
+        (perguntaAtual + 1) + ".";
+    }
 
-            document.querySelector(".numero").innerText =
-                (perguntaAtual + 1) + ".";
-        }
+    function responder(opcao) {
 
-        function responder(opcao) {
+      if (opcao === perguntas[perguntaAtual].correta) {
 
-            if (opcao === perguntas[perguntaAtual].correta) {
+        perguntaAtual++;
 
-                perguntaAtual++;
+        if (perguntaAtual < perguntas.length) {
 
-                if (perguntaAtual < perguntas.length) {
+          carregarPergunta();
 
-                    carregarPergunta();
+        } else {
 
-                } else {
-
-                    window.location.href = "parabens.html";
-
-                }
-
-            } else {
-
-                window.location.href = "erro.html";
-
-            }
+          window.location.href = "parabens.html";
 
         }
 
-        carregarPergunta();
-    </script>
+      } else {
+
+        window.location.href = "erro.html";
+
+      }
+
+    }
+
+    carregarPergunta();
+
+  </script>
 
 </body>
 
