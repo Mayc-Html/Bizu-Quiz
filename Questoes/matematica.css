@@ -1,7 +1,7 @@
 body {
     margin-top: 40px;
     font-family: 'Cherry Cream Soda', cursive;
-    background-image: url(../HTMLgameplay-vitu/Imagens-vitu/OIP\ \(5\).webp);
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -51,7 +51,7 @@ button {
 }
 
 button:hover {
-    background-color: #82fd7c;
+    transform: scale(1.12);
     color: rgb(250, 250, 250);
     ;
 }
