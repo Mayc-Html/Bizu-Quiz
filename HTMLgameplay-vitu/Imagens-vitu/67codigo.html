@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>História e Filosofia</title>
+  <link rel="stylesheet" href="Questoes\matematica.css">
+</head>
+
+<body>
+
+  <div class="comeco">
+    <div class="numero">1.</div>
+
+    <h1 class="pergunta" id="pergunta"></h1>
+  </div>
+
+  <div class="botoes-geral">
+    
+        <button class="botao" onclick="responder(0)" id="bt1"></button>
+
+        <button class="botao" onclick="responder(1)" id="bt2"></button>
+        
+        <button class="botao" onclick="responder(2)" id="bt3"></button>
+        
+        <button class="botao" onclick="responder(3)" id="bt4"></button>
+      
+    
+  </div>
+
+  <script>
+
+    const perguntas = [
+      {
+        
+  pergunta: "A democracia ateniense da Antiguidade era limitada porque:",
+  respostas: [
+    "Todos participavam",
+    "Excluía mulheres e escravos",
+    "Era controlada por reis",
+    "Proibia debates"
+  ],
+  correta: 1
+},
+{
+  pergunta: "Sobre o feudalismo na Idade Média, é correto afirmar que:",
+  respostas: [
+    "Economia industrial",
+    "Poder centralizado",
+    "Terra era a riqueza",
+    "Servos assalariados"
+  ],
+  correta: 2
+},
+{
+  pergunta: "As Cruzadas foram expedições organizadas principalmente para:",
+  respostas: [
+    "Conquistar a América",
+    "Combater o protestantismo",
+    "Retomar terras sagradas",
+    "Expandir o socialismo"
+  ],
+  correta: 2
+},
+{
+  pergunta: "A Filosofia surgiu na Grécia Antiga marcada pela busca de:",
+  respostas: [
+    "Explicações míticas",
+    "Respostas pela razão",
+    "Verdades dos reis",
+    "Ensinos religiosos"
+  ],
+  correta: 1
+},
+{
+  pergunta: "Sócrates ficou conhecido principalmente por:",
+  respostas: [
+    "Verdade nos deuses",
+    "Diálogo e crítica",
+    "Mundo das ideias",
+    "Fundou o Liceu"
+  ],
+  correta: 1
+},
+{
+  pergunta: "Para Platão, o mundo sensível é:",
+  respostas: [
+    "Ideias perfeitas",
+    "Mais verdadeiro",
+    "Mudança e aparências",
+    "Única realidade"
+  ],
+  correta: 2
+},
+{
+  pergunta: "Aristóteles afirmava que o ser humano é um 'animal político' porque:",
+  respostas: [
+    "Vive isolado",
+    "Realiza-se em comunidade",
+    "Participa de guerras",
+    "Depende dos governantes"
+  ],
+  correta: 1
+},
+{
+  pergunta: "Os filósofos pré-socráticos buscavam principalmente:",
+  respostas: [
+    "Origem do mundo",
+    "Poder dos imperadores",
+    "Superioridade dos mitos",
+    "Problemas éticos"
+  ],
+  correta: 0
+}
+      
+    ];
+
+    let perguntaAtual = 0;
+
+    function carregarPergunta() {
+
+      document.getElementById("pergunta").innerText =
+        perguntas[perguntaAtual].pergunta;
+
+      document.getElementById("bt1").innerText =
+        perguntas[perguntaAtual].respostas[0];
+
+      document.getElementById("bt2").innerText =
+        perguntas[perguntaAtual].respostas[1];
+
+      document.getElementById("bt3").innerText =
+        perguntas[perguntaAtual].respostas[2];
+
+      document.getElementById("bt4").innerText =
+        perguntas[perguntaAtual].respostas[3];
+
+      document.querySelector(".numero").innerText =
+        (perguntaAtual + 1) + ".";
+    }
+
+    function responder(opcao) {
+
+      if (opcao === perguntas[perguntaAtual].correta) {
+
+        perguntaAtual++;
+
+        if (perguntaAtual < perguntas.length) {
+
+          carregarPergunta();
+
+        } else {
+
+          window.location.href = "parabens.html";
+
+        }
+
+      } else {
+
+        window.location.href = "erro.html";
+
+      }
+
+    }
+
+    carregarPergunta();
+
+  </script>
+
+</body>
+
+</html>
