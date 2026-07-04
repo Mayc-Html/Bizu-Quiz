@@ -145,8 +145,12 @@
         location.replace('67codigo.html');
       };
 
+      const goToIndex = () => {
+        location.replace('../../Pasta-html/index.html');
+      };
+
       document.getElementById('recomecar').addEventListener('click', goToStart);
-      document.getElementById('voltar').addEventListener('click', goToStart);
+      document.getElementById('voltar').addEventListener('click', goToIndex);
 
       // Permitir ativação via tecla Enter/Space quando o botão estiver em foco
       ['recomecar', 'voltar'].forEach((id) => {
