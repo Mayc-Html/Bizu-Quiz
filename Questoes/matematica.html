@@ -1,31 +1,210 @@
 <html>
-  <head>
-    <meta charset="utf-8"/>
+
+<head>
+    <meta charset="utf-8" />
     <title>MATEMÁTICA</title>
     <link rel="stylesheet" href="matematica.css">
-  </head>
-  <body>
+</head>
 
-<div>
-  <div class="numerador">1.</div>
-    
-  <h1 class="pergunta"> Complete a sequência
-  <var>2, 18, 12...
-  </var></h1>
+<body>
 
-<div class="botoes">
-  <ul>
-    <li><button>19</button></li>
-    <li><button>14</button></li>
-    <li><button>20</button></li>
-    <li><button>22</button></li>
-  </ul>
-</div>
 
-<div>
-  <p class="credito">@CREATED BY ALGUÉM</p>
-</div>
+    <div class="comeco">
+        <div class="numerador">1.</div>
 
-</div>
-  </body>
+        <h1 class="pergunta" id="pergunta"></h1>
+    </div>
+
+    <div class="botoes">
+        <ul>
+            <button onclick="responder(0)" id="bt1"></button>
+
+            <button onclick="responder(1)" id="bt2"></button>
+
+            <button onclick="responder(2)" id="bt3"></button>
+
+            <button onclick="responder(3)" id="bt4"></button>
+        </ul>
+
+    </div>
+
+    <div>
+        <p class="credito">@CREATED BY ALGUÉM</p>
+    </div>
+
+    <script>
+        const perguntas = [
+
+            {
+                pergunta: "Em que teorema estou pensando?",
+                respostas: [
+                    "De Pitágoras",
+                    "De Tales",
+                    "De Gauss",
+                    "De Pascal",
+                ],
+                correta: 2
+            },
+
+            {
+                pergunta: " Qual o resultado da expressão: 8x7:28+1",
+                respostas: [
+                    "3",
+                    "5",
+                    "2",
+                    "15"
+                ],
+                correta: 0
+            },
+
+            {
+                pergunta: "2:0 = ?",
+                respostas: [
+                    "",
+                    "",
+                    "",
+                    "",
+                ],
+                correta: 3
+            },
+
+            {
+                pergunta: "Quem não era filósofo?",
+                respostas: [
+                    "Pitágoras",
+                    "René Descartes",
+                    " Blaise Pascal",
+                    "Leonhard Euler",
+                ],
+                correta: 3
+            },
+
+            {
+                pergunta: "Quantos anagramas podem ser formados com a palavra 'Banana'",
+                respostas: [
+                    "720",
+                    "120",
+                    "60",
+                    "360",
+                ],
+                correta: 1
+            },
+
+            {
+                pergunta: "Complete a sequência 2, 12, 18...",
+                respostas: [
+                    "19",
+                    "14",
+                    "20",
+                    "22",
+                ],
+
+                correta: 0
+            },
+
+            {
+                pergunta: "15+35-12+20-45 ",
+                respostas: [
+                    "12",
+                    "30",
+                    "13",
+                    "-3",
+                ],
+
+                correta: 2
+            },
+
+            {
+                pergunta: "Todo quadrado é um retângulo, mas nem todo retângulo é um quadrado",
+                respostas: [
+                    "sim",
+                    "não",
+                    "sei não",
+                    "tem que vê com os cara",
+                ],
+
+                correta: 0
+            },
+
+            
+            {
+                pergunta: "Quantos os divisores de 42?",
+                respostas: [
+                    "12",
+                    "4",
+                    "16",
+                    "8",
+                ],
+
+                correta: 0
+            },
+
+            {
+                pergunta: "A partir de qual assunto as letras foram introduzidas na matemática",
+                respostas: [
+                    "aritmetria",
+                    "algebra",
+                    "geometria",
+                    "polinomios",
+                ],
+
+                correta: 1
+            },
+
+            
+        ];
+
+
+        let perguntaAtual = 0;
+
+        function carregarPergunta() {
+
+            document.getElementById("pergunta").innerText =
+                perguntas[perguntaAtual].pergunta;
+
+            document.getElementById("bt1").innerText =
+                perguntas[perguntaAtual].respostas[0];
+
+            document.getElementById("bt2").innerText =
+                perguntas[perguntaAtual].respostas[1];
+
+            document.getElementById("bt3").innerText =
+                perguntas[perguntaAtual].respostas[2];
+
+            document.getElementById("bt4").innerText =
+                perguntas[perguntaAtual].respostas[3];
+
+            document.querySelector(".numerador").innerText =
+                (perguntaAtual + 1) + ".";
+        }
+
+        function responder(opcao) {
+
+            if (opcao === perguntas[perguntaAtual].correta) {
+
+                perguntaAtual++;
+
+                if (perguntaAtual < perguntas.length) {
+
+                    carregarPergunta();
+
+                } else {
+
+                    window.location.href = "parabens.html";
+
+                }
+
+            } else {
+
+                window.location.href = "erro.html";
+
+            }
+
+        }
+
+        carregarPergunta();
+    </script>
+
+</body>
+
 </html>
