@@ -5,30 +5,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>História e Filosofia</title>
-  <link rel="stylesheet" href="historia.css">
+  <link rel="stylesheet" href="/Questoes/matematica.css">
 </head>
 
 <body>
+  
+    <div class="comeco">
+        <div class="numerador">1.</div>
 
-  <div class="comeco">
-    <div class="numero">1.</div>
+        <h1 class="pergunta" id="pergunta"></h1>
+    </div>
 
-    <h1 class="pergunta" id="pergunta"></h1>
-  </div>
+    <div class="botoes">
 
-  <div class="botoes-geral">
-    
-        <button class="botao" onclick="responder(0)" id="bt1"></button>
-
-        <button class="botao" onclick="responder(1)" id="bt2"></button>
+        <ul>
         
-        <button class="botao" onclick="responder(2)" id="bt3"></button>
-        
-        <button class="botao" onclick="responder(3)" id="bt4"></button>
-      
-    
-  </div>
+            <button onclick="responder(0)" class= "botao" id="bt1"></button>
 
+            <button onclick="responder(1)" class= "botao" id="bt2"></button>
+
+            <button onclick="responder(2)" class= "botao" id="bt3"></button>
+
+            <button onclick="responder(3)" class= "botao" id="bt4"></button>
+
+        </ul>
+        
+
+    </div>
+
+    <div>
+        <p class="credito">@CREATED BY ALGUÉM</p>
+    </div>
   <script>
 
     const perguntas = [
