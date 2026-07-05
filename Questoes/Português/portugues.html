@@ -5,29 +5,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Português</title>
-  <link rel="stylesheet" href="portugues.css">
+  <link rel="stylesheet" href="/Questoes/questoes.css">
 </head>
 
 <body>
 
-  <div class="comeco">
-    <div class="numero">1.</div>
+  
+    <div class="comeco">
+        <div class="numerador">1.</div>
 
-    <h1 class="pergunta" id="pergunta"></h1>
-  </div>
+        <h1 class="pergunta" id="pergunta"></h1>
+    </div>
 
-  <div class="botoes-geral">
-    
-        <button class="botao" onclick="responder(0)" id="bt1"></button>
+    <div class="botoes">
+        <ul>
+            <button onclick="responder(0)" id="bt1"></button>
 
-        <button class="botao" onclick="responder(1)" id="bt2"></button>
-        
-        <button class="botao" onclick="responder(2)" id="bt3"></button>
-        
-        <button class="botao" onclick="responder(3)" id="bt4"></button>
-      
-    
-  </div>
+            <button onclick="responder(1)" id="bt2"></button>
+
+            <button onclick="responder(2)" id="bt3"></button>
+
+            <button onclick="responder(3)" id="bt4"></button>
+        </ul>
+
+    </div>
+
+    <div>
+        <p class="credito">@CREATED BY ALGUÉM</p>
+    </div>
+
 
   <script>
 
@@ -158,7 +164,7 @@
       document.getElementById("bt4").innerText =
         perguntas[perguntaAtual].respostas[3];
 
-      document.querySelector(".numero").innerText =
+      document.querySelector(".numerador").innerText =
         (perguntaAtual + 1) + ".";
     }
 
