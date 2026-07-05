@@ -171,8 +171,17 @@
             document.getElementById("bt3").innerText =
                 perguntas[perguntaAtual].respostas[2];
 
-            document.getElementById("bt4").innerText =
-                perguntas[perguntaAtual].respostas[3];
+            const btn4 = document.getElementById("bt4");
+            btn4.innerText = perguntas[perguntaAtual].respostas[3];
+
+            if (perguntaAtual === 2) {
+                btn4.innerText = "";
+                btn4.dataset.hover = "indivisivel";
+                btn4.classList.add("hover-reveal");
+            } else {
+                btn4.dataset.hover = "";
+                btn4.classList.remove("hover-reveal");
+            }
 
             document.querySelector(".numerador").innerText =
                 (perguntaAtual + 1) + ".";
