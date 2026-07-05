@@ -61,7 +61,8 @@ h1{
     
 }
 .botao:hover{
-    background-color: rgb(6, 190, 27);
+    background-color: #8a5a2b;
+    
     color:rgb(250, 250, 250); ;
 }
 
