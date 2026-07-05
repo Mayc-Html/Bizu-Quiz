@@ -64,6 +64,29 @@ p{
   object-fit: cover;
 }
 
+.botao-voltar{
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 20;
+  padding: 12px 24px;
+  background-color: #b3834f;
+
+  color: white;
+  border: 2px solid #8a5a2b;
+  border-radius: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.botao-voltar:hover{
+  transform: scale(1.05);
+
+}
+
 @media screen and (max-width: 768px) {
 
   .apresentacao{
