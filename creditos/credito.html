@@ -73,36 +73,41 @@ Somos extremamente gratos também ao nosso antigo professor Matheus Lima, que se
  </div>
  
 <script>
-  // Configuração da rolagem
-  const velocidade = 1; // pixels por movimento
-  const intervalo = 10; // tempo em ms
+  
+ const velocidade = 1;
+const intervalo = 10;
 
-  // Seleciona o vídeo
-  const video = document.getElementById("meuVideo");
+const video = document.getElementById("meuVideo");
 
-  // Inicia a rolagem automática
-  const autoScroll = setInterval(() => {
+let pausado = false;
+let tempoScroll;
+
+const autoScroll = setInterval(() => {
+
+    if (pausado) return;
 
     window.scrollBy(0, velocidade);
 
-    // Altura total da página
     const alturaPagina = document.documentElement.scrollHeight;
-
-    // Posição atual + altura visível
     const posicaoAtual = window.innerHeight + window.pageYOffset;
 
-    // Verifica se chegou ao final
     if (posicaoAtual >= alturaPagina) {
-
-      clearInterval(autoScroll);
-
-      console.log("Rolagem finalizada!");
-
-      // Inicia o vídeo
-      video.play();
+        clearInterval(autoScroll);
+        video.play();
     }
 
-  }, intervalo);
+}, intervalo);
+
+
+window.addEventListener("wheel", () => {
+    pausado = true;
+
+    clearTimeout(tempoScroll);
+
+    tempoScroll = setTimeout(() => {
+        pausado = false;
+    }, 1000);
+});
 </script>
  
 </body>
