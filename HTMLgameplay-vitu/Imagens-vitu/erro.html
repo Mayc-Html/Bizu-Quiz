@@ -10,7 +10,7 @@
     :root {
       --bg-start: #ffffff;
       --bg-end: #ffffff;
-      --accent: #e74c3c;
+      --accent: #000000;
       --btn: #f1c40f;
       --text: #000000;
     }
@@ -40,7 +40,7 @@
       background: rgba(255, 255, 255, 0.03);
       border-radius: 12px;
       padding: 22px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
       display: flex;
       gap: 20px;
       align-items: center;
@@ -60,6 +60,7 @@
       width: 100%;
       height: auto;
       border-radius: 8px;
+      border: 6px solid #000;
       display: block;
     }
 
@@ -98,6 +99,7 @@
       border-radius: 8px;
       font-weight: 700;
       font-size: 16px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     .btn.primary {
@@ -111,6 +113,11 @@
       border: 2px solid rgba(255, 255, 255, 0.12);
     }
 
+    .btn:hover {
+      transform: scale(1.06);
+      box-shadow: 0 25px 20px rgba(0, 0, 0, 0.3);
+    }
+
     .btn:focus {
       outline: 3px solid rgba(241, 196, 15, 0.25);
       outline-offset: 2px;
@@ -122,16 +129,21 @@
 <body>
   <main role="main">
     <section class="card" aria-labelledby="titulo-derrota">
+      
       <div class="visual" aria-hidden="true">
+       
         <img src="image.png" alt="Ilustração de erro" />
+       
+        
       </div>
 
       <div class="meta">
         <h1 id="titulo-derrota">SEU BIZONHO!</h1>
-        <p>Que pena,você não foi bizurado. Clique em <strong>Recomeçar</strong> para tentar ser alguem na vida.</p>
+        <p>Clique em <strong>Recomeçar</strong> para tentar ser alguem na vida.</p>
 
         <div class="actions">
           <button type="button" class="btn primary" id="recomecar">Recomeçar</button>
+        
           <button type="button" class="btn secondary" id="voltar">Voltar</button>
         </div>
       </div>
