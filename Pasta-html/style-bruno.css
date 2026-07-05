@@ -20,13 +20,13 @@ font-family: 'Cherry Cream Soda', cursive;
 .botao{
   padding: 15px 30px;
   background-color: #b3834f;
-    background-color: 23px solid #6b4a2f;
+    
      
 
-  color: white;
+  color: rgb(255, 255, 255);
 
-  border: none;
-  border-radius: 12px;
+  border: 7px solid #8a5a2b;
+  border-radius: 8px;
 
   font-size: 30px;
   font-weight: bold;
