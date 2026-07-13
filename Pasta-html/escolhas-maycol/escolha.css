@@ -7,15 +7,9 @@
     
 }
 
-body{
-     background-image: url(OIP\ \(5\).webp);
-     background-size: cover;
-     background-repeat:no-repeat ;
-    
-}
 h1{
     color: black;
-    font-family: "Patrick Hand SC",cursi ;
+    font-family: cursive ;
     font-size: 50px;
     
 }
@@ -75,12 +69,13 @@ h1{
 }
 .botao-genio {
     padding: 15px 40px;      /* Dá espaço para a palavra respirar */
+    font-family: cursive;  /*Familia da letra */
     font-size: 20px;         /* Deixa a palavra grande */
     font-weight: bold;       /* Deixa a letra grossa */
     text-align: center;      /* Garante que a palavra fique no meio */
     background-color: #b3834f;
-    cursor: pointer;
     border: 5px solid #6b4a2f;
+    cursor: pointer;
     color: white;
     
 }
