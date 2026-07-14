@@ -10,40 +10,47 @@
 
 <body>
     <div class="botoes">
-
         <button class="botao" onclick="window.location.href='escolhas-maycol/escolha_materias.html'">
-    Começar
-</button>
+            Começar
+        </button>
         <button class="botao" onclick="window.location.href='tutorial-matheus/tutorial.html'">
             Tutorial
         </button>
-        
-           <button class="botao" onclick="window.location.href='../creditos/credito.html'">Bizurados</button>
+        <button class="botao" onclick="window.location.href='../creditos/credito.html'">
+            Bizurados
+        </button>
     </div>
 
     <h2 class="created-by">@Create by Bizurados☝️🥸</h2>
-<audio id="efeito" src="../songs/23- Gota.mp3"></audio>
 
-    <audio id="musica" src="../songs/Naruto - Konohamaru's Theme (128 kbps).mp3" loop></audio>
+    <!-- Adicionamos "autoplay" e "muted" para forçar o navegador a aceitar o início automático -->
+    <audio id="musica" src="../songs/Naruto - Konohamaru's Theme (128 kbps).mp3" loop autoplay muted></audio>
 
-<script>
+    <script>
+        const musica = document.getElementById("musica");
 
-window.onload = async () => {
+        // Tenta tocar com som imediatamente (caso o navegador do usuário permita)
+        musica.play().catch(error => {
+            console.log("Navegador bloqueou som com volume. Rodando mutado até o primeiro clique.");
+        });
 
-    const efeito = document.getElementById("efeito");
-    const musica = document.getElementById("musica");
+        // Assim que o usuário fizer QUALQUER interação, nós ativamos o volume
+        function ativarVolume() {
+            musica.muted = false; // Desmuta a música
+            musica.play();        // Garante que está tocando
+            
+            // Remove os eventos para não ficar rodando toda hora
+            document.removeEventListener('click', ativarVolume);
+            document.removeEventListener('keydown', ativarVolume);
+        }
 
-    await efeito.play();
+        // Fica de olho no primeiro movimento do usuário para liberar o som
+        document.addEventListener('click', ativarVolume);
+        document.addEventListener('keydown', ativarVolume);
+    </script>
 
-    efeito.onended = () => {
-        musica.play();
-    }
-
-}
-
-</script>
-
-<button class="easter" onclick="window.location.href='esateregg.html'"> </button>
+    <!-- Botão de Easter Egg -->
+    <button class="easter" onclick="window.location.href='esateregg.html'"> </button>
 </body>
 
 </html>
