@@ -25,22 +25,22 @@
     <script>
         const musica = document.getElementById("musica");
 
-        // Tenta tocar com som imediatamente (caso o navegador do usuário permita)
+       
         musica.play().catch(error => {
             console.log("Navegador bloqueou som com volume. Rodando mutado até o primeiro clique.");
         });
 
-        // Assim que o usuário fizer QUALQUER interação, nós ativamos o volume
+        
         function ativarVolume() {
-            musica.muted = false; // Desmuta a música
-            musica.play();        // Garante que está tocando
+            musica.muted = false; 
+            musica.play();       
             
-            // Remove os eventos para não ficar rodando toda hora
+            
             document.removeEventListener('click', ativarVolume);
             document.removeEventListener('keydown', ativarVolume);
         }
 
-        // Fica de olho no primeiro movimento do usuário para liberar o som
+       
         document.addEventListener('click', ativarVolume);
         document.addEventListener('keydown', ativarVolume);
     </script>
