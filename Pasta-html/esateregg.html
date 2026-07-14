@@ -17,24 +17,6 @@
     </div>
 <button aria-placeholder="voltar" class="botao-genio" type=" button" onclick="window.location.href='index.html'"> Voltar</button>
 
-<audio id="efeito" src="../songs/23- Gota.mp3"></audio>
-
-    <audio id="musica" src="../songs/WhatsApp Audio 2026-07-14 at 11.04.58 (1).mpeg" loop></audio>
-
-<script>
-
-window.onload = async () => {
-
-    const efeito = document.getElementById("efeito");
-    const musica = document.getElementById("musica");
-
-    await efeito.play();
-
-    efeito.onended = () => {
-        musica.play();
-    }
-
-}
 
 </script>
 </body>
