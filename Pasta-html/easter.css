@@ -1,3 +1,47 @@
-    .easter{
-        background-image: url(3689d15f-c5a5-4c92-a630-dc07d13f4433.jpg);
-    }
+
+body {
+    background-color: #000000; /* Fundo 100% preto */
+    margin: 0;
+    height: 100vh;             /* Ocupa a altura inteira da tela */
+    display: flex;
+    justify-content: center;   /* Centraliza na horizontal */
+    align-items: center;       /* Centraliza na vertical */
+    overflow: hidden;          /* Evita barras de rolagem chatas */
+}
+
+
+.container-easter {
+    display: flex;
+    flex-direction: column;    /* Alinha os itens em coluna (um embaixo do outro) */
+    align-items: center;       /* Garante que fiquem bem alinhados no meio */
+    text-align: center;
+}
+
+
+.imagem-curioso {
+    max-width: 80%;            /* Limita a largura para não estourar em telas menores */
+    max-height: 50vh;          /* Limita a altura para sobrar espaço para o texto */
+    border-radius: 15px;       /* Borda arredondada opcional para ficar moderno */
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Sombra vermelha opcional para dar um efeito maneiro */
+}
+
+
+.texto-curioso {
+    margin-top: 20px;          /* Espaço entre a imagem e o texto */
+    color: #ff0000;            /* Vermelho chamativo */
+    font-family: 'Impact', 'Arial Black', sans-serif; /* Fonte bem forte e agressiva */
+    font-size: 2.5rem;
+    text-transform: uppercase; /* Força o texto a ficar em MAIÚSCULO */
+    letter-spacing: 2px;       /* Espaçamento entre as letras */
+}
+.botao-genio {
+    padding: 15px 40px;      /* Dá espaço para a palavra respirar */
+    font-size: 20px;         /* Deixa a palavra grande */
+    font-weight: bold;       /* Deixa a letra grossa */
+    text-align: center;      /* Garante que a palavra fique no meio */
+    background-color: #000000;
+    cursor: pointer;
+    border: 5px solid #000000;
+    color: rgb(255, 0, 0);
+    
+}
