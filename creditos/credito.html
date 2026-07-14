@@ -8,7 +8,9 @@
 </head>
 
 <body>
-
+<audio autoplay> 
+    <source src="../songs/musicas para fim de video gameplay.mp3" type="audio/mpeg">
+</audio>
 <button class="botao-voltar" onclick="window.location.href='../Pasta-html/index.html'">Voltar</button>
 
  <div class="rolagem">
@@ -76,7 +78,7 @@ Somos extremamente gratos também ao nosso antigo professor Matheus Lima, que se
  
 <script>
   
- const velocidade = 1;
+ const velocidade = 0.6
 const intervalo = 10;
 
 const video = document.getElementById("meuVideo");
@@ -84,6 +86,8 @@ const video = document.getElementById("meuVideo");
 let pausado = false;
 let tempoScroll;
 
+
+// Parar de rolar a página quando chegar ao final
 const autoScroll = setInterval(() => {
 
     if (pausado) return;

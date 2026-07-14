@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -120,21 +122,29 @@
       outline: 3px solid rgba(241, 196, 15, 0.25);
       outline-offset: 2px;
     }
+
   </style>
 </head>
+
 <body>
   <main role="main">
     <section class="card" aria-labelledby="titulo-derrota">
+      
       <div class="visual" aria-hidden="true">
-        <img src="../quimica/image.jpeg" alt="Ilustração de erro" />
+       
+        <img src="8d1710fe39eccfe75ab40b7ef9ac99af.jpg" alt="Ilustração de erro" />
+       
+        
       </div>
 
       <div class="meta">
-        <h1 id="titulo-derrota">SEU BIZONHO!</h1>
+        <h1 id="titulo-derrota">O QUE FOI ISSO, SUA ABERRAÇÃO!!!</h1>
         <p>Clique em <strong>Recomeçar</strong> para tentar ser alguem na vida.</p>
 
         <div class="actions">
           <button type="button" class="btn primary" id="recomecar">Recomeçar</button>
+        
+
           <button type="button" class="btn secondary" id="voltar">Voltar</button>
         </div>
       </div>
@@ -144,7 +154,8 @@
   <script>
     (function () {
       const goToStart = () => {
-        location.replace('info.html');
+        // Usamos location.replace para evitar manter esta página no histórico
+        location.replace('../../../Questoes/Informatica/info.html');
       };
 
       const goToIndex = () => {
@@ -153,6 +164,8 @@
 
       document.getElementById('recomecar').addEventListener('click', goToStart);
       document.getElementById('voltar').addEventListener('click', goToIndex);
+
+      // Permitir ativação via tecla Enter/Space quando o botão estiver em foco
 
       ['recomecar', 'voltar'].forEach((id) => {
         const el = document.getElementById(id);
@@ -166,4 +179,26 @@
     })();
   </script>
 </body>
+
+ <audio id="efeito" src="../../songs/Fail 1.mp3"></audio>
+
+    <audio id="musica" src="musica.mp3" loop></audio>
+
+<script>
+
+window.onload = async () => {
+
+    const efeito = document.getElementById("efeito");
+    const musica = document.getElementById("musica");
+
+    await efeito.play();
+
+    efeito.onended = () => {
+        musica.play();
+    }
+
+}
+
+</script>
+
 </html>

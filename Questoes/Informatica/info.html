@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>ARTES</title>
+    <title>INFORMÁTICA</title>
     <link rel="stylesheet" href="/Questoes/questoes.css">
 </head>
 
@@ -79,14 +79,14 @@ const perguntas = [
     },
 
     {
-        pergunta: "O que significa CPU?",
+        pergunta: "Quem veio primeiro?",
         respostas: [
-            "Unidade Central de Processamento",
-            "Controle Principal Universal",
-            "Computador Pessoal Unido",
-            "Central de Programas Universais"
+            "ovo",
+            "galinha",
+            "conceito de algoritmo",
+            "crocs"
         ],
-        correta: 0
+        correta: 2
     },
 
     {
@@ -174,12 +174,15 @@ function responder(opcao) {
         if (perguntaAtual < perguntas.length) {
             carregarPergunta();
         } else {
-            window.location.href = "parabens.html";
+            window.location.href = "../../parabens/parabens.html";
         }
     } else {
-        window.location.href = "erro.html";
+        window.location.href = "../../../Questoes/Informatica/erro.html";
     }
 }
 
 carregarPergunta();
 </script>
+
+
+</body>
