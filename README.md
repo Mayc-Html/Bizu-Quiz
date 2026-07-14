@@ -30,11 +30,17 @@ Promover a aprendizagem de forma interativa e educativa, incentivando o estudo a
 
 Não é necessário instalar dependências ou configurar servidores — o projeto roda direto no navegador.
 
- ESTRUTURA DO PROJETO
+ > ESTRUTURA DO PROJETO
 
+- creditos (créditos do programa)
+- parabens (página para quando você acerta todas as questões)
+- pasta-html (pasta principal, contendo os códigos das escolhas, tutoial e easter egg)
+. escolhas-maycol (pasta contendo o código das alternativas das questões)
+. tutorial-matheus (pasta contendo o código da página de tutorial)
+- Questoes (pasta que contém as questões de cada matéria separadas)
+- songs (pasta contendo os sons que rodam durante o uso do site)
 
-
- EQUIPE
+ > EQUIPE
 
 Desenvolvedores:
 
