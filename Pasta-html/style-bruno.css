@@ -21,8 +21,6 @@ font-family: 'Cherry Cream Soda', cursive;
   padding: 15px 30px;
   background-color: #b3834f;
     
-     
-
   color: rgb(255, 255, 255);
 
   border: 7px solid #8a5a2b;
@@ -48,4 +46,16 @@ font-family: 'Cherry Cream Soda', cursive;
     text-shadow: 4px 4px 10px black;
 }
     
+.easter{
+background-color: rgb(255, 255, 255); ;
+}
 
+.easter:hover{ 
+  transform: scale(2.0)
+  
+}
+
+.easter:onc{ 
+  transform: scale(2.0)
+  
+}
