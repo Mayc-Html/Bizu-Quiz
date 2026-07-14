@@ -22,6 +22,27 @@
     </div>
 
     <h2 class="created-by">@Create by Bizurados☝️🥸</h2>
+<audio id="efeito" src="../songs/23- Gota.mp3"></audio>
+
+    <audio id="musica" src="../songs/Naruto - Konohamaru's Theme (128 kbps).mp3" loop></audio>
+
+<script>
+
+window.onload = async () => {
+
+    const efeito = document.getElementById("efeito");
+    const musica = document.getElementById("musica");
+
+    await efeito.play();
+
+    efeito.onended = () => {
+        musica.play();
+    }
+
+}
+
+</script>
+
 </body>
 
 </html>

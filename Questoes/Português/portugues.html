@@ -180,7 +180,7 @@
 
         } else {
 
-          window.location.href = "parabens.html";
+          window.location.href = "../../parabens/parabens.html";
 
         }
 
@@ -196,6 +196,29 @@
 
   </script>
 
+   <audio id="efeito" src="../../songs/okay-lets-go_buBmJye (2).mp3"></audio>
+
+    <audio id="musica" src="../../songs/Bully - Walk Theme - [Music] (HD)(MP3_320K).mp3" loop></audio>
+
+<script>
+
+window.onload = async () => {
+
+    const efeito = document.getElementById("efeito");
+    const musica = document.getElementById("musica");
+
+    await efeito.play();
+
+    efeito.onended = () => {
+        musica.play();
+    }
+
+}
+
+</script>
+
+
 </body>
+
 
 </html>
