@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAI DAQUI!</title>
+    <link rel="stylesheet" href="easter.css">
+</head>
+<body>
+
+    <div class="container-easter">
+        <img class="imagem-curioso" src="WhatsApp Image 2026-07-14 at 08.18.54.jpeg" alt="Curioso">
+        
+        <h1 class="texto-curioso">SAI DAQUI CURIOSO!</h1>
+     
+        <button class="botao-genio" type="button" onclick="window.location.href='index.html'">Voltar</button>
+    </div>
+
+    <!-- Áudios -->
+    <audio id="efeito" src="../songs/23- Gota.mp3"></audio>
+    
+
+   <audio id="musica" src="../songs/WhatsApp Audio 2026-07-14 at 11.04.58 (1).mpeg" loop autoplay muted></audio>
+
+    <script>
+        const musica = document.getElementById("musica");
+
+       
+        musica.play().catch(error => {
+            console.log("Navegador bloqueou som com volume. Rodando mutado até o primeiro clique.");
+        });
+
+        
+        function ativarVolume() {
+            musica.muted = false; 
+            musica.play();       
+            
+            
+            document.removeEventListener('click', ativarVolume);
+            document.removeEventListener('keydown', ativarVolume);
+        }
+
+       
+        document.addEventListener('click', ativarVolume);
+        document.addEventListener('keydown', ativarVolume);
+    </script>
+</body>
+</html>

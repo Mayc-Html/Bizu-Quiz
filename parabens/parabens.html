@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parabéns — Gênio Quiz</title>
+
+    <style>
+        :root {
+            --bg-start: #ffffff;
+            --bg-end: #ffffff;
+            --accent: #000000;
+            --btn: #f1c40f;
+            --text: #f1c40f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 950px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, .35);
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            padding: 25px;
+        }
+
+        .visual {
+            flex: 1;
+            text-align: center;
+        }
+
+        .visual img {
+            width: 100%;
+            max-width: 420px;
+            border: 6px solid var(--accent);
+            border-radius: 10px;
+            transition: .3s;
+        }
+
+        .visual img:hover {
+            transform: rotate(-2deg) scale(1.03);
+        }
+
+        .meta {
+            flex: 1;
+        }
+
+        h1 {
+            color: var(--accent);
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .destaque {
+            font-size: 23px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+            padding: 14px 24px;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: .25s;
+        }
+
+        .primary {
+            background: var(--btn);
+            color: rgb(0, 0, 0);
+        }
+
+        .secondary {
+            background: #6f00ff;
+            color: rgb(0, 0, 0);
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        @media(max-width:900px) {
+
+            .card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .actions {
+                justify-content: center;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="card">
+
+        <div class="visual">
+
+          
+            <img src="niuga.jpg" alt="Parabéns">
+
+        </div>
+
+        <div class="meta">
+
+            <h1>🎉ATÉ QUE ENFIM SEU BOBALHAO!🎉</h1>
+
+            <h2>VOCÊ TERMINOU O BIZU QUIZ!</h2>
+
+            <p class="destaque">
+                Parabéns, sua aberração. Agora vá para o próximo!
+            </p>
+
+            <div class="actions">
+
+                <button class="primary" id="recomecar">
+                    Jogar Novamente
+                </button>
+
+                <button class="secondary" id="voltar">
+                    Voltar ao Menu
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        document.getElementById("recomecar").onclick = () => {
+
+            location.replace("../../../Questoes/Português/portugues.html");
+
+        }
+
+        document.getElementById("voltar").onclick = () => {
+
+            location.replace("../../Pasta-html/index.html");
+
+        }
+
+        
+
+    </script>
+
+    <audio id="efeito" src="../songs/victory_sJDDywi.mp3"></audio>
+
+    <audio id="musica" src="musica.mp3" loop></audio>
+
+<script>
+
+window.onload = async () => {
+
+    const efeito = document.getElementById("efeito");
+    const musica = document.getElementById("musica");
+
+    await efeito.play();
+
+    efeito.onended = () => {
+        musica.play();
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>

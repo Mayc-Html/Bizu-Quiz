@@ -1,0 +1,208 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>ARTES</title>
+    <link rel="stylesheet" href="/Questoes/questoes.css">
+</head>
+
+<body>
+
+
+    <div class="comeco">
+        <div class="numerador">1.</div>
+
+        <h1 class="pergunta" id="pergunta"></h1>
+    </div>
+
+   <div class="botoes">
+    <ul>
+        <button onclick="responder(0)" id="bt1"></button>
+        <button onclick="responder(1)" id="bt2"></button>
+        <button onclick="responder(2)" id="bt3"></button>
+        <button onclick="responder(3)" id="bt4"></button>
+    </ul>
+
+    
+</div>
+
+    <div>
+        <p class="credito">@CREATED BY: BIZURADOS</p>
+    </div>
+
+    <script>
+        const perguntas = [
+
+            {
+                pergunta: "Quem pintou a monalisa?",
+                respostas: [
+                    "Everaldo",
+                    "Leonardo Da Vinci",
+                    "Picasso",
+                    "Michelangelo",
+                ],
+                correta: 1
+            },
+
+            {
+                pergunta: " Qual é o movimento artístico valoriza os sonhos e o incosciente?",
+                respostas: [
+                    "Cubismo",
+                    "Surrealismo",
+                    "Barroco",
+                    "Impressionismo"
+                ],
+                correta: 1
+            },
+
+            {
+                pergunta: "Quais são as cores primárias?",
+                respostas: [
+                    "Verde,laranja e roxo",
+                    "Vermelho,azul e amarelo",
+                    "Vermelho,azul e verde",
+                    "Preto,branco e cinza",
+                ],
+                correta: 2
+            },
+
+            {
+                pergunta: "Quem cortou parte da própria orelha?",
+                respostas: [
+                    "Claude Monet",
+                    "Pablo Picasso",
+                    " Salvador Dali",
+                    "Vincent Van Gogh",
+                ],
+                correta: 3
+            },
+
+            {
+                pergunta: "O cubismo ficou famoso principalmente por:",
+                respostas: [
+                    "Retratar Sonhos",
+                    "Pintar apenas paisagens",
+                    "Usar somente tinta preta",
+                    "Dividir formas geometricas ",
+                ],
+                correta: 3
+            },
+
+            {
+                pergunta: "Qual é a cor do fusca de everaldo?",
+                respostas: [
+                    "bege",
+                    "Marrom ",
+                    "Preto",
+                    "Branco",
+                ],
+
+                correta: 0
+            },
+
+            {
+                pergunta: "Qual destes é um tipo de escultura? ",
+                respostas: [
+                  "Papel sulfite",
+                  "Caderno",
+                  "Mármore",
+                    "Pendrive",
+                ],
+
+                correta: 2
+            },
+
+            {
+                pergunta: "Qual destas NÃO é uma linguaguem artística?",
+                respostas: [
+                    "Música",
+                    "Dança",
+                    "Teatro",
+                    "Teclado",
+                ],
+
+                correta: 3
+            },
+
+            
+            {
+                pergunta: "Quem pintou a Capela sistina?",
+                respostas: [
+                    "M/chelangelo",
+                    "michelangelo",
+                    "michelan",
+                    "Tartaruga Ninja",
+                ],
+
+                correta: 3
+            },
+
+            {
+                pergunta: "Qual e meu cantor favorito?",
+                respostas: [
+                    "Daniel Ceaser",
+                    "Frank Ocean",
+                    "Brent Fayaz",
+                    "Gil Bala",
+                ],
+
+                correta: 1
+            },
+
+            
+        ];
+
+
+        let perguntaAtual = 0;
+
+        function carregarPergunta() {
+
+            document.getElementById("pergunta").innerText =
+                perguntas[perguntaAtual].pergunta;
+
+            document.getElementById("bt1").innerText =
+                perguntas[perguntaAtual].respostas[0];
+
+            document.getElementById("bt2").innerText =
+                perguntas[perguntaAtual].respostas[1];
+
+            document.getElementById("bt3").innerText =
+                perguntas[perguntaAtual].respostas[2];
+
+            document.getElementById("bt4").innerText =
+                perguntas[perguntaAtual].respostas[3];
+
+            document.querySelector(".numerador").innerText =
+                (perguntaAtual + 1) + ".";
+        }
+
+        function responder(opcao) {
+
+            if (opcao === perguntas[perguntaAtual].correta) {
+
+                perguntaAtual++;
+
+                if (perguntaAtual < perguntas.length) {
+
+                    carregarPergunta();
+
+                } else {
+
+                    window.location.href = "../../parabens/parabens.html";
+
+                }
+
+            } else {
+
+                window.location.href = "erro.html";
+
+            }
+
+        }
+
+        carregarPergunta();
+    </script>
+
+</body>
+
+</html>
