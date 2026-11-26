@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parabéns — Gênio Quiz</title>
+    <title>Parabéns — Bizu Quiz</title>
 
     <style>
         :root {
@@ -155,12 +155,12 @@
 
         <div class="meta">
 
-            <h1>🎉ATÉ QUE ENFIM SEU BOBALHAO!🎉</h1>
+            <h1>🎉 PARABÉNS! 🎉</h1>
 
             <h2>VOCÊ TERMINOU O BIZU QUIZ!</h2>
 
             <p class="destaque">
-                Parabéns, sua aberração. Agora vá para o próximo!
+                Você concluiu o desafio. Escolha a próxima matéria!
             </p>
 
             <div class="actions">
@@ -183,13 +183,15 @@
 
         document.getElementById("recomecar").onclick = () => {
 
-            location.replace("../../../Questoes/Português/portugues.html");
+            const materia = new URLSearchParams(location.search).get("materia");
+            const rotas = {"Informatica": "Informatica/info.html", "Português": "Português/portugues.html", "artes": "artes/artes.html", "historia": "historia/historia.html", "matematica": "matematica/matematica.html", "quimica": "quimica/quimica.html"};
+            location.replace(Object.hasOwn(rotas, materia) ? "../Questoes/" + rotas[materia] : "../Pasta-html/escolhas-maycol/escolha_materias.html");
 
         }
 
         document.getElementById("voltar").onclick = () => {
 
-            location.replace("../../Pasta-html/index.html");
+            location.replace("../Pasta-html/index.html");
 
         }
 
@@ -199,20 +201,13 @@
 
     <audio id="efeito" src="../songs/victory_sJDDywi.mp3"></audio>
 
-    <audio id="musica" src="musica.mp3" loop></audio>
-
 <script>
 
 window.onload = async () => {
 
     const efeito = document.getElementById("efeito");
-    const musica = document.getElementById("musica");
 
-    await efeito.play();
-
-    efeito.onended = () => {
-        musica.play();
-    }
+    await efeito.play().catch(() => {});
 
 }
 

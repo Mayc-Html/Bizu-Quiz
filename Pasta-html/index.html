@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genio quiz</title>
+    <title>Bizu Quiz</title>
     <link rel="stylesheet" href="style-bruno.css">
 </head>
 
@@ -37,7 +37,7 @@
         
         function ativarVolume() {
             musica.muted = false; // Desmuta a música
-            musica.play();        // Garante que está tocando
+            musica.play().catch(() => {});        // Garante que está tocando
             
             // Remove os eventos para não ficar rodando toda hora
             document.removeEventListener('click', ativarVolume);
