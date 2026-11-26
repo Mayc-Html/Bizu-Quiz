@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
 <title>Créditos</title>
-<head>
+
   <link rel="stylesheet" href="rolagem.css">
+<link rel="stylesheet" href="../assets/acessibilidade.css">
 </head>
 
-<body>
-<audio autoplay> 
-    <source src="../songs/musicas%20para%20fim%20de%20video%20gameplay.mp3" type="audio/mpeg">
-</audio>
+<body class="bizu-credits">
+
 <button class="botao-voltar" onclick="window.location.href='../Pasta-html/index.html'">Voltar</button>
 
  <div class="rolagem">
@@ -46,7 +46,7 @@ VERSÃO BRASILEIRA: HERBERT RICHERS.
    </div>
 
 <div>
-           <h1>Created by:</h1>
+           <h1>Desenvolvido por:</h1>
    
    <p>Lider (Leonardo)</p>
    <p>Padrão (Maycol)</p>
@@ -66,9 +66,7 @@ Somos extremamente gratos também ao nosso antigo professor Matheus Lima, que se
      
      <video class="video"
        id="meuVideo"
-       src="credvideu.mp4"
-       muted
-       loop>
+       src="credvideu.mp4" controls aria-label="Vídeo dos créditos" preload="none">
       </video>
 
       <button class="botao-voltar" onclick="window.location.href='../Pasta-html/index.html'">Voltar</button>
@@ -76,45 +74,12 @@ Somos extremamente gratos também ao nosso antigo professor Matheus Lima, que se
      </div>
  </div>
  
-<script>
-  
- const velocidade = 0.6
-const intervalo = 10;
 
-const video = document.getElementById("meuVideo");
-
-let pausado = false;
-let tempoScroll;
-
-
-// Parar de rolar a página quando chegar ao final
-const autoScroll = setInterval(() => {
-
-    if (pausado) return;
-
-    window.scrollBy(0, velocidade);
-
-    const alturaPagina = document.documentElement.scrollHeight;
-    const posicaoAtual = window.innerHeight + window.pageYOffset;
-
-    if (posicaoAtual >= alturaPagina) {
-        clearInterval(autoScroll);
-        video.play();
-    }
-
-}, intervalo);
-
-
-window.addEventListener("wheel", () => {
-    pausado = true;
-
-    clearTimeout(tempoScroll);
-
-    tempoScroll = setTimeout(() => {
-        pausado = false;
-    }, 1000);
-});
-</script>
  
+<section class="bizu-media" aria-label="Controles de som"><strong>Som opcional</strong>
+<audio controls aria-label="Áudio do jogo" preload="none"> 
+    <source src="../songs/musicas%20para%20fim%20de%20video%20gameplay.mp3" type="audio/mpeg">
+</audio>
+</section>
 </body>
 </html>

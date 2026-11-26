@@ -6,26 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Português</title>
   <link rel="stylesheet" href="../questoes.css">
+<link rel="stylesheet" href="../../assets/acessibilidade.css">
 </head>
 
-<body>
+<body class="bizu-quiz">
+<main>
+<a class="bizu-back" href="../../Pasta-html/escolhas-maycol/escolha_materias.html">Voltar às matérias</a>
 
   
     <div class="comeco">
-        <div class="numerador">1.</div>
+        <div class="numerador" id="progresso-questao">Questão 1</div>
 
-        <h1 class="pergunta" id="pergunta"></h1>
+        <h1 class="pergunta" id="pergunta" tabindex="-1" aria-describedby="progresso-questao"></h1>
     </div>
 
     <div class="botoes">
         <ul>
-            <button onclick="responder(0)" id="bt1"></button>
+            <li><button onclick="responder(0)" id="bt1"></button></li>
 
-            <button onclick="responder(1)" id="bt2"></button>
+            <li><button onclick="responder(1)" id="bt2"></button></li>
 
-            <button onclick="responder(2)" id="bt3"></button>
+            <li><button onclick="responder(2)" id="bt3"></button></li>
 
-            <button onclick="responder(3)" id="bt4"></button>
+            <li><button onclick="responder(3)" id="bt4"></button></li>
         </ul>
 
     </div>
@@ -33,9 +36,8 @@
     <div>
         <p class="credito">@CREATED BY: BIZURADOS</p>
     </div>
-
-
-  <script>
+</main>
+<script>
 
     const perguntas = [
 
@@ -165,7 +167,7 @@
         perguntas[perguntaAtual].respostas[3];
 
       document.querySelector(".numerador").innerText =
-        (perguntaAtual + 1) + ".";
+        "Questão " + (perguntaAtual + 1) + " de " + perguntas.length;
     }
 
     function responder(opcao) {
@@ -177,6 +179,7 @@
         if (perguntaAtual < perguntas.length) {
 
           carregarPergunta();
+            document.getElementById("pergunta").focus();
 
         } else {
 
@@ -196,28 +199,17 @@
 
   </script>
 
-   <audio id="efeito" src="../../songs/okay-lets-go_buBmJye%20(2).mp3"></audio>
+   
 
-    <audio id="musica" src="../../songs/Bully%20-%20Walk%20Theme%20-%20%5BMusic%5D%20(HD)(MP3_320K).mp3" loop></audio>
-
-<script>
-
-window.onload = async () => {
-
-    const efeito = document.getElementById("efeito");
-    const musica = document.getElementById("musica");
-
-    await efeito.play();
-
-    efeito.onended = () => {
-        musica.play();
-    }
-
-}
-
-</script>
+    
 
 
+
+
+<section class="bizu-media" aria-label="Controles de som"><strong>Som opcional</strong>
+<audio id="efeito" src="../../songs/okay-lets-go_buBmJye%20(2).mp3" controls aria-label="Áudio do jogo" preload="none"></audio>
+<audio id="musica" src="../../songs/Bully%20-%20Walk%20Theme%20-%20%5BMusic%5D%20(HD)(MP3_320K).mp3" controls aria-label="Música de fundo" preload="none"></audio>
+</section>
 </body>
 
 

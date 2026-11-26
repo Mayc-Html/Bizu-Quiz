@@ -1,31 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../questoes.css">
     <title>Química</title>
+<link rel="stylesheet" href="../../assets/acessibilidade.css">
 </head>
-<body>
+<body class="bizu-quiz">
+<main>
+<a class="bizu-back" href="../../Pasta-html/escolhas-maycol/escolha_materias.html">Voltar às matérias</a>
 
     <div class="comeco">
-        <div class="numerador">1.</div>
+        <div class="numerador" id="progresso-questao">Questão 1</div>
 
-        <h1 class="pergunta" id="pergunta"></h1>
+        <h1 class="pergunta" id="pergunta" tabindex="-1" aria-describedby="progresso-questao"></h1>
     </div>
 
     <div class="botoes">
 
         <ul>
         
-            <button onclick="responder(0)" class= "botao" id="bt1"></button>
+            <li><button onclick="responder(0)" class= "botao" id="bt1"></button></li>
 
-            <button onclick="responder(1)" class= "botao" id="bt2"></button>
+            <li><button onclick="responder(1)" class= "botao" id="bt2"></button></li>
 
-            <button onclick="responder(2)" class= "botao" id="bt3"></button>
+            <li><button onclick="responder(2)" class= "botao" id="bt3"></button></li>
 
-            <button onclick="responder(3)" class= "botao" id="bt4"></button>
+            <li><button onclick="responder(3)" class= "botao" id="bt4"></button></li>
 
         </ul>
         
@@ -35,8 +38,8 @@
     <div>
         <p class="credito">@CREATED BY: BIZURADOS</p>
     </div>
-
-    <script>
+</main>
+<script>
         const perguntas = [
 
             {
@@ -179,7 +182,7 @@
         perguntas[perguntaAtual].respostas[3];
 
       document.querySelector(".numerador").innerText =
-        (perguntaAtual + 1) + ".";
+        "Questão " + (perguntaAtual + 1) + " de " + perguntas.length;
     }
 
     function responder(opcao) {
@@ -191,6 +194,7 @@
         if (perguntaAtual < perguntas.length) {
 
           carregarPergunta();
+            document.getElementById("pergunta").focus();
 
         } else {
 

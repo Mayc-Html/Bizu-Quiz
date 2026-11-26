@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAI DAQUI!</title>
     <link rel="stylesheet" href="easter.css">
+<link rel="stylesheet" href="../assets/acessibilidade.css">
 </head>
-<body>
+<body class="bizu-easter">
 
     <div class="container-easter">
         <img class="imagem-curioso" src="WhatsApp%20Image%202026-07-14%20at%2008.18.54.jpeg" alt="Curioso">
@@ -17,32 +18,15 @@
     </div>
 
     <!-- Áudios -->
-    <audio id="efeito" src="../songs/23-%20Gota.mp3"></audio>
+    
     
 
-   <audio id="musica" src="../songs/WhatsApp%20Audio%202026-07-14%20at%2011.04.58%20(1).mpeg" loop autoplay muted></audio>
+   
 
-    <script>
-        const musica = document.getElementById("musica");
-
-       
-        musica.play().catch(error => {
-            console.log("Navegador bloqueou som com volume. Rodando mutado até o primeiro clique.");
-        });
-
-        
-        function ativarVolume() {
-            musica.muted = false; 
-            musica.play();       
-            
-            
-            document.removeEventListener('click', ativarVolume);
-            document.removeEventListener('keydown', ativarVolume);
-        }
-
-       
-        document.addEventListener('click', ativarVolume);
-        document.addEventListener('keydown', ativarVolume);
-    </script>
+    
+<section class="bizu-media" aria-label="Controles de som"><strong>Som opcional</strong>
+<audio id="efeito" src="../songs/23-%20Gota.mp3" controls aria-label="Áudio do jogo" preload="none"></audio>
+<audio id="musica" src="../songs/WhatsApp%20Audio%202026-07-14%20at%2011.04.58%20(1).mpeg" controls aria-label="Música de fundo" preload="none"></audio>
+</section>
 </body>
 </html>

@@ -140,9 +140,10 @@
         }
     </style>
 
+<link rel="stylesheet" href="../assets/acessibilidade.css">
 </head>
 
-<body>
+<body class="bizu-result">
 
     <div class="card">
 
@@ -199,20 +200,13 @@
 
     </script>
 
-    <audio id="efeito" src="../songs/victory_sJDDywi.mp3"></audio>
+    
 
-<script>
 
-window.onload = async () => {
 
-    const efeito = document.getElementById("efeito");
-
-    await efeito.play().catch(() => {});
-
-}
-
-</script>
-
+<section class="bizu-media" aria-label="Controles de som"><strong>Som opcional</strong>
+<audio id="efeito" src="../songs/victory_sJDDywi.mp3" controls aria-label="Áudio do jogo" preload="none"></audio>
+</section>
 </body>
 
 </html>
