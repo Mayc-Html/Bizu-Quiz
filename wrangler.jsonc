@@ -1,0 +1,9 @@
+{
+  "name": "bizuquiz",
+  "compatibility_date": "2026-11-26",
+  "assets": {
+    "directory": "./",
+    "html_handling": "none",
+    "not_found_handling": "none"
+  }
+}

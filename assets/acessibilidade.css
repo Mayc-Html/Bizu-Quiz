@@ -1,0 +1,59 @@
+/* BizuQuiz - melhorias de acessibilidade */
+*, *::before, *::after { box-sizing: border-box; }
+html { font-size: 100%; }
+body { line-height: 1.5; overflow-wrap: anywhere; }
+img, video, audio { max-width: 100%; }
+button, a, audio, video { scroll-margin: 1rem; }
+button { min-height: 44px; min-width: 44px; height: auto; max-width: 100%; white-space: normal; line-height: 1.35; }
+button:focus-visible, a:focus-visible, audio:focus-visible, video:focus-visible, #pergunta:focus-visible { outline: 3px solid #154ec1 !important; outline-offset: 4px; box-shadow: 0 0 0 3px #fff !important; }
+button:hover, button:active { transform: none !important; }
+.bizu-sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.bizu-media { display: grid; gap: .4rem; max-width: 36rem; margin: 1rem auto; padding: 1rem; color: #171717; background: #fff; border: 1px solid #777; border-radius: .5rem; }
+.bizu-media audio { width: 100%; }
+.bizu-menu, .bizu-subjects, .bizu-quiz { margin: 0; padding: clamp(1rem, 3vw, 2rem); font-family: Arial, sans-serif; }
+.bizu-menu .botoes { height: auto; min-height: 65vh; gap: 1rem; }
+.bizu-menu .botao, .bizu-subjects .botao, .bizu-subjects .botao-genio, .bizu-quiz button, .bizu-credits .botao-voltar { background: #805326; color: #fff; border: 3px solid #573515; font: bold clamp(1.125rem, 3vw, 1.75rem)/1.35 Arial, sans-serif; padding: .8rem 1rem; min-height: 56px; }
+.bizu-menu .botao { width: min(100%, 31.25rem); }
+.bizu-menu .created-by, .bizu-subjects .created-by { font-size: 1rem; color: #161616; background: #fff; text-shadow: none; padding: .5rem; margin: 1rem 0; }
+.bizu-menu .easter { width: auto; min-height: 44px; background: #fff; color: #171717; border: 2px solid #573515; padding: .5rem 1rem; }
+.bizu-subjects h1, .bizu-quiz .pergunta { font: bold clamp(1.5rem, 4vw, 2.5rem)/1.3 Arial, sans-serif; }
+.bizu-subjects .selecao, .bizu-subjects .botoes-geral { margin: 1.5rem auto; }
+.bizu-subjects .botoes-geral { max-width: 48rem; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+.bizu-subjects .botao { width: 100%; height: auto; }
+.bizu-quiz { background-color: #fff; color: #171717; }
+.bizu-quiz .numerador { width: auto; height: auto; display: inline-block; font-size: 1rem; border-radius: .5rem; padding: .6rem 1rem; margin: 0; color: #171717; background: #dfd4ef; }
+.bizu-quiz .pergunta { margin: 1.5rem auto; max-width: 60rem; }
+.bizu-quiz .botoes ul { max-width: 52rem; padding: 0; margin: 1.5rem auto; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+.bizu-quiz .botoes li { min-width: 0; display: flex; }
+.bizu-quiz .botoes button { width: 100%; box-shadow: none; min-height: 64px; }
+.bizu-quiz .credito { font-size: 1rem; margin: 2rem 0 0; text-align: center; }
+.bizu-quiz .bizu-back { display: inline-block; padding: .6rem; color: #15429a; text-decoration: underline; }
+.bizu-result { height: auto; min-height: 100vh; }
+.bizu-result .card, .bizu-result .meta, .bizu-result .visual { min-width: 0; }
+.bizu-result .card { max-width: 100%; }
+.bizu-result h1 { font-size: clamp(1.5rem, 4vw, 2.5rem); line-height: 1.3; }
+.bizu-result h2 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+.bizu-result .secondary { background: #493075; color: #fff; border: 2px solid #493075; }
+.bizu-result .actions button { min-height: 44px; }
+.bizu-result .bizu-media { width: 100%; }
+.bizu-easter { min-height: 100vh; height: auto; overflow: auto; flex-direction: column; padding: 1rem; }
+.bizu-easter .texto-curioso, .bizu-easter .botao-genio { color: #ff8989; }
+.bizu-easter .botao-genio { border: 2px solid #ff8989; }
+.bizu-credits { overflow: auto; padding: 1rem; }
+.bizu-credits .rolagem { position: static; animation: none; max-width: 60rem; margin: auto; }
+.bizu-credits .botao-voltar { position: static; }
+.bizu-credits .apresentacao, .bizu-credits .dialogo, .bizu-credits .final { margin-top: 2rem; }
+.bizu-credits .apresentacao, .bizu-credits h1 { font-size: clamp(1.5rem, 4vw, 2rem); }
+.bizu-credits p, .bizu-credits .dialogo { font-size: 1.125rem; }
+.bizu-credits .video { width: min(100%, 45rem); height: auto; }
+.bizu-tutorial main { margin: 1rem auto; max-width: 100%; }
+@media (max-width: 600px) {
+  .bizu-quiz .botoes ul, .bizu-subjects .botoes-geral { grid-template-columns: minmax(0,1fr); }
+  .bizu-result { padding: 1rem; display: block; }
+  .bizu-result main { padding: 0; }
+  .bizu-result .card { padding: 1rem; flex-direction: column; }
+  .bizu-result .actions { flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
