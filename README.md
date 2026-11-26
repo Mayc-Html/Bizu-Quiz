@@ -26,7 +26,7 @@ Promover a aprendizagem de forma interativa e educativa, incentivando o estudo a
    
    cd Bizu-Quiz
    
-3. Abra o arquivo `index.html` no navegador de sua preferência.
+3. Execute `python -m http.server 8000` na raiz do repositório e acesse http://localhost:8000. Para publicar no Cloudflare Pages, use a raiz como diretório de saída e `exit 0` como comando de build.
 
 Não é necessário instalar dependências ou configurar servidores — o projeto roda direto no navegador.
 

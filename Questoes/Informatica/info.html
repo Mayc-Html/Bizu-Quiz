@@ -1,9 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" />
     <title>INFORMÁTICA</title>
-    <link rel="stylesheet" href="/Questoes/questoes.css">
+    <link rel="stylesheet" href="../questoes.css">
 </head>
 
 <body>
@@ -72,7 +74,7 @@ const perguntas = [
         respostas: [
             "Enter",
             "Shift",
-            "delete",
+            "Backspace",
             "Esc"
         ],
         correta: 2
@@ -174,10 +176,10 @@ function responder(opcao) {
         if (perguntaAtual < perguntas.length) {
             carregarPergunta();
         } else {
-            window.location.href = "../../parabens/parabens.html";
+            window.location.href = "../../parabens/parabens.html?materia=" + encodeURIComponent("Informatica");
         }
     } else {
-        window.location.href = "../../../Questoes/Informatica/erro.html";
+        window.location.href = "erro.html";
     }
 }
 

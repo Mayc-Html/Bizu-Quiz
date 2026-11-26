@@ -155,7 +155,7 @@
     (function () {
       const goToStart = () => {
         // Usamos location.replace para evitar manter esta página no histórico
-        location.replace('../../../Questoes/Informatica/info.html');
+        location.replace('info.html');
       };
 
       const goToIndex = () => {
@@ -182,20 +182,13 @@
 
  <audio id="efeito" src="../../songs/Fail 1.mp3"></audio>
 
-    <audio id="musica" src="musica.mp3" loop></audio>
-
 <script>
 
 window.onload = async () => {
 
     const efeito = document.getElementById("efeito");
-    const musica = document.getElementById("musica");
 
-    await efeito.play();
-
-    efeito.onended = () => {
-        musica.play();
-    }
+    await efeito.play().catch(() => {});
 
 }
 
