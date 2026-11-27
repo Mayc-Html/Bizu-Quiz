@@ -211,3 +211,44 @@ body.bizu-menu button.easter:focus-visible {
   outline-offset: 2px;
 }
 /* FIM: easter egg discreto BizuQuiz */
+
+/* INICIO: centralizacao das questoes BizuQuiz */
+body.bizu-quiz {
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: auto;
+  margin: 0;
+  padding: clamp(1rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+}
+body.bizu-quiz > main {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 60rem;
+  min-width: 0;
+  margin: auto;
+  text-align: center;
+  gap: clamp(1rem, 3vh, 1.75rem);
+}
+body.bizu-quiz .pergunta {
+  margin: 0 auto;
+  overflow-wrap: anywhere;
+}
+body.bizu-quiz .botoes ul {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+}
+body.bizu-quiz .credito {
+  margin: 0;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  body.bizu-quiz .botoes ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* FIM: centralizacao das questoes BizuQuiz */
