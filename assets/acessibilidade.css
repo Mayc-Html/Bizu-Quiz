@@ -162,3 +162,52 @@ body.bizu-menu {
   }
 }
 /* FIM: menu responsivo BizuQuiz */
+
+/* INICIO: easter egg discreto BizuQuiz */
+body.bizu-menu {
+  position: relative;
+  padding-bottom: max(3.5rem, env(safe-area-inset-bottom, 0px));
+}
+/* Área clicável de 44px, mas apenas um pequeno ponto visível. */
+body.bizu-menu button.easter {
+  position: absolute;
+  inset: auto max(.25rem, env(safe-area-inset-right, 0px)) max(.25rem, env(safe-area-inset-bottom, 0px)) auto;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: none;
+  cursor: pointer;
+  transform: none;
+}
+body.bizu-menu button.easter::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #805326;
+  box-shadow: 0 0 0 1px #fff;
+}
+body.bizu-menu button.easter:hover,
+body.bizu-menu button.easter:focus-visible {
+  background: transparent;
+  transform: none;
+}
+body.bizu-menu button.easter:hover::before,
+body.bizu-menu button.easter:focus-visible::before {
+  width: 10px;
+  height: 10px;
+  background: #573515;
+}
+body.bizu-menu button.easter:focus-visible {
+  outline: 3px solid #154ec1 !important;
+  outline-offset: 2px;
+}
+/* FIM: easter egg discreto BizuQuiz */
