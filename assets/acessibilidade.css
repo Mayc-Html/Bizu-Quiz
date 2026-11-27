@@ -57,3 +57,108 @@ button:hover, button:active { transform: none !important; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* INICIO: menu responsivo BizuQuiz */
+/* A arte original mede 1536 x 1024 (3:2). */
+body.bizu-menu {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  height: auto;
+  padding: clamp(1rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  background-image: url('../Pasta-html/3689d15f-c5a5-4c92-a630-dc07d13f4433.jpg');
+  background-position: right center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.bizu-menu .botoes {
+  flex: 1 0 auto;
+  width: min(44vw, 31.25rem);
+  height: auto;
+  min-height: 0;
+  margin: 0 0 0 clamp(0rem, 3vw, 3rem);
+  padding: 1.5rem 0;
+  gap: clamp(.75rem, 2vh, 1.25rem);
+  justify-content: center;
+  align-items: stretch;
+}
+.bizu-menu .botoes .botao {
+  width: 100%;
+  height: auto;
+  min-height: 56px;
+  overflow-wrap: break-word;
+}
+.bizu-menu .bizu-menu-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem 1rem;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: .25rem 0;
+}
+.bizu-menu .created-by {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+  padding: .25rem .5rem;
+  font: 600 .875rem/1.5 Arial, sans-serif;
+  color: #161616;
+  background: #fff;
+  border-radius: .375rem;
+  text-shadow: none;
+  overflow-wrap: break-word;
+}
+.bizu-menu .easter {
+  margin: 0;
+  min-height: 44px;
+  min-width: 44px;
+  width: auto;
+  height: auto;
+  padding: .5rem .85rem;
+  border: 2px solid #573515;
+  border-radius: .5rem;
+  background: #fff;
+  color: #573515;
+  font: 600 .875rem/1.35 Arial, sans-serif;
+}
+.bizu-menu .easter:hover { background: #f4e8d8; }
+/* Em celulares e tablets estreitos, a arte fica inteira acima do menu. */
+@media (max-width: 800px), (max-width: 1000px) and (max-height: 500px) {
+  body.bizu-menu {
+    background-image: none;
+    padding: clamp(.75rem, 3vw, 1.5rem);
+    align-items: center;
+    gap: .75rem;
+  }
+  body.bizu-menu::before {
+    content: '';
+    display: block;
+    flex: 0 0 auto;
+    width: min(100%, 36rem);
+    aspect-ratio: 3 / 2;
+    background: url('../Pasta-html/3689d15f-c5a5-4c92-a630-dc07d13f4433.jpg') center / contain no-repeat;
+  }
+  .bizu-menu .botoes {
+    flex: 0 0 auto;
+    width: min(100%, 30rem);
+    margin: 0;
+    padding: .25rem 0;
+    gap: .75rem;
+  }
+  .bizu-menu .botoes .botao {
+    min-height: 52px;
+    font-size: clamp(1.125rem, 4vw, 1.5rem);
+  }
+  .bizu-menu .bizu-menu-footer {
+    margin-top: auto;
+    justify-content: center;
+    text-align: center;
+  }
+}
+/* FIM: menu responsivo BizuQuiz */
