@@ -252,3 +252,25 @@ body.bizu-quiz .credito {
   }
 }
 /* FIM: centralizacao das questoes BizuQuiz */
+
+/* INICIO: multimidia BizuQuiz */
+.bizu-sound-toggle {
+  position: fixed; top: .65rem; right: .65rem; z-index: 100;
+  width: 44px !important; min-width: 44px !important;
+  height: 44px !important; min-height: 44px !important;
+  padding: 0 !important; margin: 0 !important;
+  display: grid; place-items: center; border-radius: 50%;
+  border: 1px solid #777 !important; background: #fff !important;
+  color: #171717 !important; font: 1.15rem/1 Arial,sans-serif !important;
+  box-shadow: none !important; cursor: pointer;
+}
+.bizu-credits .rolagem { position: static; animation: none; }
+.bizu-credits { overflow-y: auto; scroll-behavior: auto; padding-bottom: 2rem; }
+.bizu-credits .bizu-scroll-toggle {
+  position: fixed; bottom: .75rem; left: .75rem; z-index: 101;
+  background: #805326; color: #fff; border: 2px solid #c9a477;
+  border-radius: .5rem; padding: .5rem .8rem; font: 600 .9rem/1.3 Arial,sans-serif;
+  min-height: 44px; cursor: pointer;
+}
+.bizu-credits .video { display: block; width: min(100%, 45rem); height: auto; margin: 1rem auto 3rem; }
+/* FIM: multimidia BizuQuiz */
